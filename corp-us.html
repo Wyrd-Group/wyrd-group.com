@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{{const W=new URLSearchParams(location.search).get("theme");if(W==="light"||W==="dark"){document.documentElement.dataset.theme=W}}{if(new URLSearchParams(location.search).get("_omthumb")==="1"){const W=(q)=>{const X=q.focus;if(!X)return;q.focus=function(H){X.call(this,{...H,preventScroll:true})}};W(HTMLElement.prototype);W(SVGElement.prototype);if(typeof MathMLElement!=="undefined"){W(MathMLElement.prototype)}const $=(q)=>{q.removeAttribute("autofocus");q.inert=true;if(!(q instanceof HTMLElement))q.removeAttribute("tabindex")};const z=(q)=>{if(q.hasAttribute("autofocus"))$(q);for(const X of q.querySelectorAll("[autofocus]")){$(X)}};z(document.documentElement);new MutationObserver((q)=>{for(const X of q){for(const H of X.addedNodes){if(H.nodeType===1)z(H)}}}).observe(document,{childList:true,subtree:true})}}{const W=()=>{try{if(document.querySelector('meta[name="color-scheme"]'))return;const $=getComputedStyle(document.documentElement).getPropertyValue("color-scheme").trim();if($&&$!=="normal")return;const z=(j)=>{if(!j)return null;const F=getComputedStyle(j).backgroundColor.match(/^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:[,\s/]+([\d.]+%?))?\s*\)$/);if(!F)return null;const G=F[4]==null?1:parseFloat(F[4])/(F[4].endsWith("%")?100:1);if(G<0.99)return null;return[+F[1],+F[2],+F[3]]};const q=z(document.body)||z(document.documentElement);if(!q)return;const X=(j)=>{const F=j/255;return F<=0.04045?F/12.92:((F+0.055)/1.055)**2.4};const H=0.2126*X(q[0])+0.7152*X(q[1])+0.0722*X(q[2]);document.documentElement.style.setProperty("color-scheme",H<0.4?"dark":"light")}catch{}};if(document.readyState==="complete")W();else window.addEventListener("load",W)}var b=[];var p=false;var u=30000;var d=3000;document.addEventListener("DOMContentLoaded",()=>{const W=window.Babel;const $="om-src-id";if(W&&W.registerPlugin&&!(W.availablePlugins&&W.availablePlugins[$])){W.registerPlugin($,({types:H})=>({visitor:{JSXOpeningElement(j,F){const G=j.node;if(G.name&&G.name.type==="JSXMemberExpression")return;for(let Q=0;Q<G.attributes.length;Q++){const V=G.attributes[Q];if(V.type==="JSXAttribute"&&V.name&&V.name.name==="data-om-id")return}const P=F.file&&F.file.opts&&F.file.opts.filename||"?";const R=G.loc&&G.loc.start;const J=`jsx:${P}:${G.start??0}:${R?R.line:0}:${R?R.column+1:0}`;G.attributes.push(H.jsxAttribute(H.jsxIdentifier("data-om-id"),H.stringLiteral(J)))}}}))}const z="om-text-extract";let q=false;if(p&&W&&W.registerPlugin&&!(W.availablePlugins&&W.availablePlugins[z])){const H=window.React;if(H&&H.useSyncExternalStore&&H.createElement){q=true;const j={};const F=new Set;let G=0;window.__omTextO=j;window.__omTextSet=(J)=>{for(const Q in J){const V=J[Q];if(V==null)delete j[Q];else j[Q]=V}G++;F.forEach((Q)=>Q())};const P=(J)=>{F.add(J);return()=>F.delete(J)};const R=()=>G;window.__OmT=function J(Q){H.useSyncExternalStore(P,R,R);return H.createElement("span",{"data-om-text":Q.i,className:"__om-t"},Q.i in j?j[Q.i]:Q.children)};W.registerPlugin(z,({types:J})=>{const Q={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const V={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const Y=(K,M)=>J.logicalExpression("??",J.memberExpression(J.logicalExpression("||",J.memberExpression(J.identifier("window"),J.identifier("__omTextO")),J.objectExpression([])),J.stringLiteral(K),true),M);const Z=(K)=>K.file&&K.file.opts&&K.file.opts.filename||"?";const B=(K)=>K.file&&K.file.code||"";const U=(K,M)=>{const L=(D)=>D&&D.start!=null&&D.end!=null&&(D.type==="StringLiteral"||D.type==="TemplateLiteral"&&D.expressions.length===0)?[D.start,D.end]:null;const N=L(M);if(N)return N;if(M&&M.type==="Identifier"){const D=K.scope.getBinding(M.name);if(D&&D.constant&&D.path.node.type==="VariableDeclarator"){return L(D.path.node.init)}}return null};const x=(K,M,L)=>{const N=K.node;let D=false;const f=(w,A)=>{D=true;return J.jsxElement(J.jsxOpeningElement(J.jsxIdentifier("__OmT"),[J.jsxAttribute(J.jsxIdentifier("i"),J.stringLiteral(w))],false),J.jsxClosingElement(J.jsxIdentifier("__OmT")),[A],false)};const C=N.children.map((w)=>{if(w.type==="JSXText"){if(w.start==null||w.end==null)return w;const A=L.slice(w.start,w.end);const S=A.length-A.trimStart().length;const O=A.length-A.trimEnd().length;if(S+O>=A.length)return w;return f(`txt:${M}:${w.start+S}:${w.end-O}`,w)}if(w.type==="JSXExpressionContainer"){const A=U(K,w.expression);if(A)return f(`str:${M}:${A[0]}:${A[1]}`,w)}return w});if(D)N.children=C};return{visitor:{JSXOpeningElement(K,M){const L=K.node;const N=Z(M);const D={};for(let f=0;f<L.attributes.length;f++){const C=L.attributes[f];if(C.type!=="JSXAttribute"||!C.name)continue;const w=C.name.name;if(!V[w])continue;if(!C.value||C.value.type!=="StringLiteral")continue;if(C.value.start==null||C.value.end==null)continue;const A=`txt:${N}:${C.value.start}:${C.value.end}`;D[w]=A;C.value=J.jsxExpressionContainer(Y(A,J.stringLiteral(C.value.value)))}if(Object.keys(D).length){L.attributes.push(J.jsxAttribute(J.jsxIdentifier("data-om-text-attrs"),J.stringLiteral(JSON.stringify(D))))}},JSXElement(K,M){const L=K.node.openingElement;const N=L&&L.name&&L.name.name;if(N==="__OmT")return;if(typeof N==="string"&&Q[N])return;x(K,Z(M),B(M))},JSXFragment(K,M){x(K,Z(M),B(M))}}}})}}const X=q?["transform-react-jsx-source",$,z]:["transform-react-jsx-source",$];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((H,j)=>{const F=H.getAttribute("data-plugins")||"";const G=X.filter((P)=>F.indexOf(P)<0);if(G.length){H.setAttribute("data-plugins",F?`${F},${G.join(",")}`:G.join(","))}if(!H.hasAttribute("data-filename")){H.setAttribute("data-filename",H.getAttribute("src")||`inline-${j}`)}})});var I=window.parent;var g="not editable here — open the project in the Claude Design editor to save";var n=()=>Promise.resolve({persisted:false,noHost:true,reason:g});var k=n;var v="data/storage.json";var l=()=>{try{const W=new URL(document.baseURI);const $=W.pathname.match(/\/projects\/([^/]+)\/serve\//);if($)return $[1];return W.hostname.split(".")[0]||""}catch{return location.hostname.split(".")[0]||""}};var o=()=>{try{const W=new URL(document.baseURI);const $=W.pathname.indexOf("/serve/");if($>=0)return W.origin+W.pathname.slice(0,$+"/serve/".length)+v}catch{}return"./"+v};var E=null;var _=()=>{if(!E){E=fetch(o(),{cache:"no-store"}).then((W)=>{if(W.ok)return W.text();return W.status===404?"":null}).catch(()=>null).then((W)=>{if(W===null){E=null;return null}const $=new Map;if(!W)return $;let z;try{z=JSON.parse(W)}catch{console.warn("[omelette.storage] "+v+" is not valid JSON; treating the store as unreadable so a save cannot overwrite the "+"hand-edited bytes. Fix the JSON (or delete the file) to re-enable persistence.");E=null;return null}if(z===null||typeof z!=="object"||Array.isArray(z)){console.warn("[omelette.storage] "+v+" doesn't hold a JSON object; treating the store as unreadable so a save cannot "+"overwrite the hand-edited bytes. Make the top level a JSON object to re-enable persistence.");E=null;return null}const q=z;if("data"in q){const X=q.data;if(X===null||typeof X!=="object"||Array.isArray(X)){console.warn("[omelette.storage] "+v+' has a "data" field that is not a JSON object; treating the store as unreadable so a '+'save cannot overwrite the hand-edited bytes. Make "data" a JSON object to re-enable persistence.');E=null;return null}const H=q._meta;const j=H!==null&&typeof H==="object"?H.project:undefined;if(typeof j==="string"&&j!==""&&j!==l())return $;for(const F of Object.keys(X))$.set(F,X[F]);return $}for(const X of Object.keys(q)){if(X!=="_meta")$.set(X,q[X])}return $})}return E};var y=(W)=>k(v,JSON.stringify({_meta:{project:l(),version:1},data:Object.fromEntries(W)},null,2));var m=Promise.resolve();var T=(W)=>{const $=m.then(W);m=$.then(()=>{return},()=>{return});return $};var s=/sk-(?:ant-)?[A-Za-z0-9_-]{16,}|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{20,}|xox[a-z]-[A-Za-z0-9][A-Za-z0-9-]{9,}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY-----/;var a=/password|passwd|secret|api[_-]?key|access[_-]?token|auth[_-]?token|credential/i;var r=(W,$,z)=>{if(s.test($)||a.test(W)&&typeof z==="string"&&z.length>=8){console.warn('[omelette.storage] the value for "'+W+'" looks like a credential. The storage file is a plaintext project file — visible to '+"everyone with project access and copied when the project is duplicated. Do not store secrets here.")}};var c={persisted:false,reason:"could not load the existing store — not overwriting it"};var i={persisted:false,reason:"stored value changed since a failed read — re-read this key before saving"};var h=new Set;var t={get:(W)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.get: key must be a string"))}return T(_).then(($)=>{if($===null){h.add(W);return null}h.delete(W);if(!$.has(W))return null;const z=$.get(W);return z==null?null:JSON.parse(JSON.stringify(z))})},set:(W,$)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.set: key must be a string"))}let z;try{z=JSON.stringify($)}catch(X){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable ("+String(X)+")"))}if(z===undefined){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable"))}r(W,z,$);const q=JSON.parse(z);return T(()=>_().then((X)=>{if(X===null)return c;if(h.has(W)){if(X.has(W))return i;h.delete(W)}X.set(W,q);return y(X)}))},delete:(W)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.delete: key must be a string"))}return T(()=>_().then(($)=>{if($===null)return c;if(h.has(W)){if($.has(W))return i;h.delete(W)}$.delete(W);return y($)}))},keys:()=>T(_).then((W)=>W===null?[]:Array.from(W.keys()))};window.omelette={writeFile:(W,$)=>k(W,$).then((z)=>{if(!z.persisted&&!z.noHost){throw new Error(z.reason||"write failed")}}),storage:t};if(I&&I!==window){const W=(J,Q)=>{try{I.postMessage({__omelette_log:true,type:J,data:Q},"*")}catch{}};["log","warn","error"].forEach((J)=>{const Q=console[J];console[J]=(...V)=>{const Y=V.map((Z)=>{try{return typeof Z==="object"?JSON.stringify(Z):String(Z)}catch{try{return String(Z)}catch{return"[unstringifiable]"}}}).join(" ");W(J,Y);Q.apply(console,V)}});window.addEventListener("error",(J)=>{const Q=J.target;if(Q&&Q!==window&&Q.tagName){const V=Q.src||Q.href||"";W("resource_error",`${Q.tagName} failed to load: ${V}`)}else{W("error",`${J.message||"Unknown error"} at ${J.filename||"?"}:${J.lineno||0}:${J.colno||0}`)}},true);window.addEventListener("unhandledrejection",(J)=>{const Q=J.reason;const V=Q instanceof Error?`${Q.message} ${Q.stack}`:String(Q);W("error",`Unhandled rejection: ${V}`)});window.addEventListener("click",(J)=>{if(J.defaultPrevented||J.button!==0)return;if(J.metaKey||J.ctrlKey||J.shiftKey||J.altKey)return;const Q=J.composedPath?J.composedPath():[];const V=["button","input","select","textarea","summary","label"];let Y=null;for(const x of Q){if(!(x instanceof Element))continue;if(x.localName==="a"){if(!(x instanceof HTMLAnchorElement))return;Y=x;break}if(V.indexOf(x.localName)!==-1)return}if(!Y)return;if(Y.isContentEditable)return;const Z=Y.closest("[contenteditable]");if(Z&&Z.getAttribute("contenteditable")!=="false")return;const B=(Y.getAttribute("target")||"_self").toLowerCase();if(B!=="_self"&&B!=="_top"&&B!=="_parent")return;let U;try{U=new URL(Y.href)}catch{return}if(U.protocol!=="http:"&&U.protocol!=="https:")return;if(location.origin==="null")return;if(U.origin===location.origin)return;J.preventDefault();window.open(U.href,"_blank","noopener,noreferrer")});const $=()=>{try{I.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(window.ResizeObserver)new ResizeObserver($).observe(document.documentElement);const z=()=>{$();if(!document.querySelector('script[type="text/babel"],script[type="text/jsx"]'))return;const J=()=>document.getElementById("root")||document.querySelector("body > div[id]");const Q=J()?.firstElementChild??null;let V=0;const Y=()=>{const Z=J();if(Z&&Z.firstElementChild!==Q||++V>30){$();return}setTimeout(Y,100)};setTimeout(Y,100)};if(document.readyState==="complete")z();else window.addEventListener("load",z);const q={};let X=0;const H=(J)=>new Promise((Q,V)=>{if(!b.length){V(new Error("claude.complete: no parent origin"));return}const Y=`c${++X}`;const Z=()=>setTimeout(()=>{delete q[Y];V(new Error(`claude.complete: no data for ${u/1000}s`))},u);const B=Z();q[Y]={resolve:Q,reject:V,text:"",t:B,arm:Z};try{for(const U of b){I.postMessage({__om_api:true,id:Y,body:J},U)}}catch(U){clearTimeout(B);delete q[Y];V(U)}});const j=8;const F=async(J,Q)=>{if(!Array.isArray(J.messages)){throw new Error("claude.complete: tools require a messages array")}const V=J.messages.slice();const Y={...J,tools:J.tools.map((U)=>{if(U===null||typeof U!=="object")return U;const x={};for(const K of Object.keys(U)){if(typeof U[K]!=="function")x[K]=U[K]}return x})};const Z=Y.tool_choice;const B=Z!=null&&(Z.type==="any"||Z.type==="tool")?{...Y,tool_choice:Z.disable_parallel_tool_use!==undefined?{type:"auto",disable_parallel_tool_use:Z.disable_parallel_tool_use}:{type:"auto"}}:Y;for(let U=0;U<j;U++){const x=await H({...U===0?Y:B,messages:V});const K=x.message;const M=K&&Array.isArray(K.content)?K.content:null;const L=M?M.filter((D)=>D?.type==="tool_use"):[];if(K?.stop_reason!=="tool_use"||L.length===0){return x.text}const N=[];for(const D of L){const f=Q.get(D.name);if(!f){N.push({type:"tool_result",tool_use_id:D.id,content:`no handler for tool "${D.name}"`,is_error:true});continue}try{const C=await f(D.input);const w=typeof C==="string"?C:R(C)??"";N.push({type:"tool_result",tool_use_id:D.id,content:w})}catch(C){N.push({type:"tool_result",tool_use_id:D.id,content:String(C?.message??C??"tool handler failed"),is_error:true})}}V.push({role:"assistant",content:M},{role:"user",content:N})}throw new Error(`claude.complete: exceeded ${j} tool turns`)};window.claude={complete(J){const Q=J;if(Q!==null&&typeof Q==="object"&&Array.isArray(Q.tools)&&Q.tools.some((V)=>V!==null&&typeof V==="object"&&typeof V.run==="function")){const V=new Map;for(const Y of Q.tools){if(Y!==null&&typeof Y==="object"&&typeof Y.run==="function"){V.set(String(Y.name),Y.run)}}return F(Q,V)}return H(J).then((V)=>V.text)}};const G={};let P=0;k=(J,Q)=>new Promise((V)=>{if(!b.length){V({persisted:false,noHost:true,reason:g});return}const Y=`f${++P}`;const Z=setTimeout(()=>{delete G[Y];V({persisted:false,noHost:true,reason:g})},d);G[Y]={settle:V,t:Z};try{for(const B of b){I.postMessage({__om_file:true,id:Y,op:"write",path:J,content:Q},B)}}catch{clearTimeout(Z);delete G[Y];V({persisted:false,noHost:true,reason:g})}});const R=(J)=>{try{return JSON.stringify(J)}catch{return JSON.stringify(String(J))}};window.addEventListener("message",(J)=>{if(b.indexOf(J.origin)<0)return;if(J.source!==I)return;const Q=J.data;if(!Q)return;if(Q.type==="omelette-preview-refresh"){if(typeof Q.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(Q.token))return;const Z=Math.max(1,Math.floor((Q.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+Q.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+Z;return}if(Q.__om_file_r){const Z=G[Q.id];if(!Z)return;clearTimeout(Z.t);delete G[Q.id];Z.settle(Q.ok?{persisted:true}:{persisted:false,reason:Q.error||"write failed"});return}if(Q.__om_api_r){const Z=q[Q.id];if(!Z)return;if(Q.error!=null){clearTimeout(Z.t);delete q[Q.id];Z.reject(new Error(Q.error));return}if(Q.chunk!=null){clearTimeout(Z.t);Z.t=Z.arm();Z.text+=Q.chunk;return}if(Q.done){clearTimeout(Z.t);delete q[Q.id];Z.resolve({text:Q.text!=null?Q.text:Z.text,message:Q.message});return}return}if(!Q.__om_eval)return;const V=Q;const Y=(Z)=>{J.source.postMessage({...Z,__om_eval_r:1,id:V.id},J.origin)};try{const Z=(0,eval)(V.code);if(Z&&typeof Z.then==="function"){Z.then((B)=>Y({ok:1,v:R(B)}),(B)=>Y({ok:0,e:String(B)}))}else{Y({ok:1,v:R(Z)})}}catch(Z){Y({ok:0,e:String(Z)})}})}})();
+</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>CORP-US — defense, protected operations &amp; civil resilience — Wyrd Group</title>
+<meta name="description" content="CORP-US is Wyrd's defense, protected-operations, civil-resilience, critical-infrastructure, robotics, drone, maritime and B2G division. Command, field, machines, shields and continuity — under explicit human authority and signed proof." />
+<link rel="canonical" href="https://wyrd-group.com/corp-us.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26'%3E%3Cg stroke='%23f2f3f4' stroke-width='2' fill='none'%3E%3Cline x1='11' y1='1' x2='11' y2='25'/%3E%3Cline x1='4' y1='6' x2='18' y2='4'/%3E%3Cline x1='4' y1='13' x2='18' y2='15'/%3E%3Cline x1='4' y1='21' x2='18' y2='19'/%3E%3C/g%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Wyrd Group" />
+<meta property="og:title" content="CORP-US — defense, protected operations &amp; civil resilience — Wyrd Group" />
+<meta property="og:description" content="CORP-US is Wyrd's defense, protected-operations, civil-resilience, critical-infrastructure, robotics, drone, maritime and B2G division. Command, field, machines, shields and continuity — under explicit human authority and signed proof." />
+<meta property="og:url" content="https://wyrd-group.com/corp-us.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#060708" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="wyrd-palantir.css" />
+<link rel="stylesheet" href="wyrd-group.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Wyrd">
+      <svg width="16" height="20" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+        <line x1="11" y1="1" x2="11" y2="25" stroke-width="1.6"></line>
+        <line x1="4" y1="6" x2="18" y2="4" stroke-width="1.6"></line>
+        <line x1="4" y1="13" x2="18" y2="15" stroke-width="1.6"></line>
+        <line x1="4" y1="21" x2="18" y2="19" stroke-width="1.6"></line>
+      </svg>
+      <span class="word">WYRD</span>
+    </a>
+    <div class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="divisions.html">Divisions</a>
+      <a class="on" href="corp-us.html">CORP-US</a>
+      <a href="proof.html">Proof</a>
+      <a href="research.html">Research</a>
+      <a href="partners.html">Design Partners</a>
+      <a href="about.html">About</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="#brief">Briefing</a>
+    <button class="nav-burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="0" y1="1" x2="18" y2="1"></line><line x1="0" y1="7" x2="18" y2="7"></line><line x1="0" y1="13" x2="18" y2="13"></line></svg></button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" data-open="false">
+  <div class="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="dhead">
+      <span>Wyrd Group</span>
+      <button class="dclose" type="button" aria-label="Close menu"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="1" x2="14" y2="14"></line><line x1="14" y1="1" x2="1" y2="14"></line></svg></button>
+    </div>
+      <a class="dlink" href="platform.html">Platform</a>
+      <a class="dlink" href="divisions.html">Divisions</a>
+      <a class="dlink on" href="corp-us.html">CORP-US</a>
+      <a class="dlink" href="proof.html">Proof</a>
+      <a class="dlink" href="research.html">Research</a>
+      <a class="dlink" href="partners.html">Design Partners</a>
+      <a class="dlink" href="about.html">About</a>
+      <a class="btn btn-primary dcta" href="#brief">Briefing</a>
+  </div>
+</div>
+
+<div class="classbar">
+  <div class="wrap">
+    <span class="sig">CORP-US</span>
+    <span class="hidexs">Defense · protected operations · civil resilience</span>
+    <span class="spacer"></span>
+    <span>Public capability page · full detail under authority</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <header class="phead">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> CORP-US</div>
+      <h1>Local intelligence for protected operations, resilient infrastructure and disconnected environments.</h1>
+      <p>CORP-US is Wyrd's defense, protected-operations, civil-resilience, strategic-infrastructure, robotics, drone, maritime and government division. It runs on the same governed stack as the rest of the group — identity, mandate, command chain, rules of engagement, theater boundary, escalation ladder, dual key, signed proof — deployed where the network is contested and the consequence is physical.</p>
+      <div class="actions" style="display:flex;gap:12px;margin-top:34px;flex-wrap:wrap">
+        <a class="btn btn-primary" href="#brief">Request the institutional briefing <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#authority">The authority model</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="sec" id="authority" style="padding-top:clamp(40px,5vw,64px)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> The authority model</div>
+        <h2>Machines that can operate alone, under authority that never leaves the human.</h2>
+        <p>Every CORP-US system inherits the same ICARUS primitives. This is what makes edge autonomy defensible: the node can decide under signal silence because its limits were signed before it left.</p>
+      </div>
+      <div class="prims" style="grid-template-columns:1fr">
+        <div class="pr"><div class="pri">11</div><div class="prn">CommandChain</div><div class="prd">The ordered authority path from the institution or commander to execution. No action exists outside a chain.</div></div>
+        <div class="pr"><div class="pri">12</div><div class="prn">RulesOfEngagement</div><div class="prd">Domain rules and boundaries for permitted operation, signed and machine-checkable.</div></div>
+        <div class="pr"><div class="pri">13</div><div class="prn">TheaterBoundary</div><div class="prd">Geographic, institutional, network or environmental limits on where a system may act at all.</div></div>
+        <div class="pr"><div class="pri">14</div><div class="prn">EscalationLadder</div><div class="prd">Routine handling → review → restriction → shutdown, defined before deployment.</div></div>
+        <div class="pr"><div class="pri">15</div><div class="prn">DualKey</div><div class="prd">Two-party authorization wherever duties must stay separated.</div></div>
+        <div class="pr"><div class="pri">10</div><div class="prn">RDOverride</div><div class="prd">An explicit, recorded research-and-development override — never silent authority.</div></div>
+        <div class="pr"><div class="pri">06</div><div class="prn">ProofPack</div><div class="prd">The after-action record: who, what, why, under which mandate, approved by whom, and what was refused.</div></div>
+      </div>
+      <div class="gate" style="margin-top:clamp(32px,4vw,44px)">
+        <div class="gk">What this means operationally</div>
+        <p>A CORP-US node reasons locally, selects an approved model, acts inside a bounded mandate, <b>refuses what is unauthorized</b>, keeps signed records, and synchronizes when a link returns. Human command is not a UI courtesy — it is a cryptographic precondition. Fail-closed is the default: when authority cannot be verified, the system does not act.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="command" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Corpus / Legion</div>
+        <h2>Command, cyber and institutional operations.</h2>
+        <p>The operating family inside CORP-US: command theatre, mission context, operator roles, city and field systems, cybersecurity, fleet visibility, human approvals and proof.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">CTOS · Command Theatre</div><div class="prole">City and institutional operating layer.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it coordinates</div><p class="pa">Transport, roads, utilities, emergency response, infrastructure, drones, autonomous mobility, public-service workflows, city digital twins and governed actuation.</p></div>
+            <div><div class="pq">Market entry</div><p class="pa dim">Planning, observation, simulation, proof and advisory pilots first; narrow authorized actuation after. We do not present CTOS as omniscient city control.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">WRAITH</div><div class="prole">Cybersecurity defense operations.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Scope</div><p class="pa">Authorized monitoring, anomaly detection, hardening, incident response, infrastructure preparation, proof, isolated resilience and defensive exercises.</p></div>
+            <div><div class="pq">Assurance track</div><p class="pa dim">IEC 62443 for operational technology, plus the Conformity Lab's continuous rehearsal against SOC 2, ISO 27001 / 42001, the Cyber Resilience Act and FIPS 140-3.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">LANCE</div><div class="prole">Licensed, authorized offensive-cyber operations — governed separately from WRAITH.</div><span class="st restricted">Restricted</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Programme status</div><p class="pa">A separately governed capability track for authorized cyber assessment and high-assurance security operations, subject to law, licensing and client mandate. Separation from WRAITH is deliberate: defensive and offensive authority never share a key.</p></div>
+            <div><div class="pq">Release conditions</div><p class="pa dim">Lawful customer authority, licensing, export review, procurement rules, independent legal and safety controls. Technical content is exchanged only in that channel — never in web, deck or general partner material.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="field" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Field operations</div>
+        <h2>Samael and Azrael — one stack, two doctrines.</h2>
+        <p>Civilian protection and military operations share the software and are governed as separate programs with separate authority. They are never merged, and never share a mandate.</p>
+      </div>
+      <div class="contrast">
+        <div class="cpanel">
+          <div class="ck">Samael · civilian protection</div>
+          <h3>Judgment before action.</h3>
+          <ul>
+            <li>Fire, flood, earthquake, rescue</li>
+            <li>Missing-person search, medical evacuation</li>
+            <li>Infrastructure incidents, hazardous-area work</li>
+            <li>Civil defense and resilient field comms</li>
+            <li>Samael Field Mesh for operator support</li>
+            <li>Observe · verify · understand · seek authority · protect · record</li>
+          </ul>
+        </div>
+        <div class="cpanel on">
+          <div class="ck">Azrael · military operations</div>
+          <h3>Lawful defense support.</h3>
+          <ul>
+            <li>Situational awareness for the operator and the command</li>
+            <li>Air-gapped coordination under signal silence</li>
+            <li>Logistics and sustainment intelligence</li>
+            <li>Resilient, encrypted communications</li>
+            <li>Operator protection and survivability</li>
+            <li>Human-controlled mission support</li>
+            <li>After-action proof an auditor can verify</li>
+          </ul>
+        </div>
+      </div>
+      <div class="plist" style="margin-top:clamp(36px,4.5vw,52px)">
+        <details class="prow2">
+          <summary><div class="pname">Azrael</div><div class="prole">The military-operations family. Restricted programme, named and placed.</div><span class="st restricted">Restricted</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What Wyrd contributes</div><p class="pa">The governed local brain: edge autonomy that keeps functioning without uplink, a mandate that bounds what the node may do in a defined theater, an escalation ladder that ends in shutdown, and a tamper-evident record of every decision and refusal.</p></div>
+            <div><div class="pq">Why it is a separate programme</div><p class="pa">Because the authority model must be auditable independently of the civilian stack. Azrael carries its own command chain, its own rules of engagement and its own keys.</p></div>
+            <div><div class="pq">Release conditions</div><p class="pa dim">Lawful customer authority, licensing, export review, procurement rules, independent safety and legal controls, explicit human command and domain-specific approval. Weapons, targeting and offensive-autonomy content is handled in that channel and does not appear in any public or general partner document.</p></div>
+            <div><div class="pq">Naming</div><p class="pa dim">Azrael is the preferred spelling (recorded variant: Asrael). Never used as a synonym for Samael.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Samael Exo</div><div class="prole">Protected field-assist and exosuit programme.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Editions</div><div class="chips"><span>Secure</span><span>Rescue</span><span>Aceso medical</span><span>Industrial</span><span>Sport &amp; training</span></div></div>
+            <div><div class="pq">The stack it combines</div><p class="pa">Physical load support, Wyrd Lens, a local CAOS field node, encrypted communication, 3D awareness, biometric safety, drone and robot coordination, proof logs and human command.</p></div>
+            <div><div class="pq">The promise</div><p class="pa">Awareness, endurance, survivability, coordination and proof.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd Lens · field edition</div><div class="prole">Visual interface and sensor surface for field and industrial work.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Field uses</div><p class="pa">Visual verification, object memory, guided procedure, industrial work, field awareness and protected-operations visual-feed unification.</p></div>
+            <div><div class="pq">Boundary</div><p class="pa dim">Consumer and field editions stay visually and legally separated, with local redaction on the sovereign-vision path.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Casualty-reduction intelligence</div><div class="prole">Awareness intended to lower harm to operators and civilians.</div><span class="st restricted">Partner / restricted</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Placement</div><p class="pa">Samael where the customer is civil protection; Azrael where a lawful defense customer and authority exist. Visibility follows the customer and the jurisdiction.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="machines" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Machines</div>
+        <h2>Air, land, surface, subsea — coordinated as one governed system.</h2>
+        <p>HIVE is domain-neutral. Every vehicle class inherits the same mission contracts, lost-link rules and signed replay. Near-term strategy is partner hardware plus Wyrd software.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">HIVE</div><div class="prole">Multi-agent, multi-robot and fleet coordination.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Core software</div><p class="pa">Mission contracts, task allocation, fleet state, battery and resource awareness, relay planning, dock planning, disconnected operation, lost-link behaviour, adaptive coordination and signed after-action replay.</p></div>
+            <div><div class="pq">Protected uses</div><div class="chips"><span>Field situational awareness</span><span>Encrypted relay</span><span>Visual-feed fusion</span><span>Route safety</span><span>Teammate &amp; asset awareness</span><span>Infrastructure protection</span><span>Authorized surveillance</span><span>After-action proof</span></div></div>
+            <div><div class="pq">Civil uses</div><div class="chips"><span>Mapping</span><span>Thermal inspection</span><span>Search &amp; rescue</span><span>Fire observation</span><span>Flood assessment</span><span>Medical delivery</span><span>Pipelines &amp; power lines</span><span>Ports</span><span>Border awareness</span><span>Disaster logistics</span></div></div>
+            <div><div class="pq">Evidence</div><p class="pa dim">Release gate reports 190 passing tests plus static and security checks. No hardware, SITL, field, regulator or customer validation yet — simulation and SITL come before any vehicle.</p></div>
+            <div class="pspan"><div class="pq">Mission simulation — illustrative</div><div class="fig" style="margin-top:9px;padding:14px">
+<svg class="figsvg" viewBox="0 0 640 240" role="img" aria-label="HIVE simulation: five nodes coordinating inside a theater boundary; one request outside the boundary refused">
+<rect x="24" y="22" width="452" height="196" rx="8" fill="none" stroke="rgba(58,168,115,.5)" stroke-dasharray="5 5"></rect>
+<text x="36" y="42" font-family="Geist Mono, monospace" font-size="10" fill="rgba(58,168,115,.9)" letter-spacing="1">THEATER BOUNDARY · TB-04</text>
+<rect x="52" y="164" width="34" height="34" rx="4" fill="none" stroke="rgba(242,243,244,.5)"></rect>
+<text x="69" y="212" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)" text-anchor="middle">DOCK</text>
+<polyline points="86,180 170,96 268,140 356,72 430,120" fill="none" stroke="rgba(58,168,115,.65)" stroke-dasharray="3 4"></polyline>
+<circle cx="170" cy="96" r="8" fill="none" stroke="#3aa873" stroke-width="1.5"></circle>
+<circle cx="268" cy="140" r="8" fill="none" stroke="#3aa873" stroke-width="1.5"></circle>
+<circle cx="356" cy="72" r="8" fill="none" stroke="#3aa873" stroke-width="1.5"></circle>
+<circle cx="430" cy="120" r="8" fill="none" stroke="#3aa873" stroke-width="1.5"></circle>
+<circle cx="430" cy="120" r="16" fill="none" stroke="rgba(58,168,115,.3)"></circle>
+<text x="430" y="152" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)" text-anchor="middle">relay · lost-link armed</text>
+<text x="182" y="92" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)">mapping</text>
+<text x="280" y="152" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)">thermal</text>
+<text x="330" y="58" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)">search</text>
+<circle cx="570" cy="96" r="8" fill="none" stroke="rgba(242,243,244,.4)" stroke-width="1.5"></circle>
+<line x1="492" y1="104" x2="560" y2="97" stroke="rgba(242,243,244,.3)" stroke-dasharray="3 4"></line>
+<text x="570" y="70" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)" text-anchor="middle">task outside</text>
+<text x="570" y="82" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)" text-anchor="middle">TB-04</text>
+<text x="570" y="124" font-family="Geist Mono, monospace" font-size="10" fill="#f2f3f4" text-anchor="middle">✕ refused</text>
+<text x="570" y="138" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.56)" text-anchor="middle">no mandate</text>
+<text x="36" y="232" font-family="Geist Mono, monospace" font-size="9" fill="rgba(242,243,244,.45)">signed after-action replay · every allocation and refusal recorded</text>
+</svg></div></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Hardware families</div><div class="prole">The vehicle classes recorded in the design work.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Recorded classes</div><div class="chips"><span>Short-range mapping multirotor</span><span>Longer-range relay VTOL</span><span>Charging pod</span><span>Micro-delivery drone</span><span>Persistent node</span><span>Ground vehicle</span><span>Surface vessel</span><span>Underwater scout</span><span>Modular Phaeton body</span></div></div>
+            <div><div class="pq">Strategy</div><p class="pa dim">Partner hardware, reference designs and certification — not immediate mass manufacture of every vehicle.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Leviathan</div><div class="prole">Maritime and subsea operations — reusable, autonomous, provable.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Product direction</div><p class="pa"><b>Leviathan Watch</b> for persistent monitoring and mission control · <b>Leviathan Scouts</b> as partner-built underwater vehicles · <b>Leviathan Signal</b> for acoustic, optical, buoy, vessel and delayed-sync communication, with HIVE Deep for disconnected fleet coordination.</p></div>
+            <div><div class="pq">Missions</div><div class="chips"><span>Submarine-cable inspection</span><span>Offshore assets</span><span>Ports &amp; coastlines</span><span>Pipelines</span><span>Search &amp; recovery</span><span>Environmental monitoring</span><span>Infrastructure security</span></div></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Manufacturer adapters, realistic simulation, hardware-in-the-loop work, production cryptography and sea trials. Wyrd does not manufacture submarines.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Phaeton</div><div class="prole">Multimodular robotics.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Reconfigurable bodies</div><div class="chips"><span>Wheels</span><span>Tracks</span><span>Legs</span><span>Arms</span><span>Tools</span><span>Sensors</span><span>Cargo</span><span>Aerial modules</span><span>Surface modules</span></div></div>
+            <div><div class="pq">Wyrd's contribution</div><p class="pa">Local brain, mission policy, module identity, tool permissions, coordination, proof and lifecycle. Not a synonym for Leviathan.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">NOMAD</div><div class="prole">Persistent aerial-node design study.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Payload intent</div><p class="pa">Communications relay, sensing, local compute, mapping, emergency support and airspace awareness on a long-endurance platform.</p></div>
+            <div><div class="pq">Honest status</div><p class="pa dim">A local 3D design study exists. Aerodynamics, certification, energy, payload and field performance are unvalidated.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">HIVE Frontier</div><div class="prole">Lawful border-awareness and rescue system.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Functions</div><p class="pa">Corridor monitoring, remote-post connectivity, terrain mapping, missing-person and rescue support, anomaly alerts, inspection prioritization, anti-smuggling intelligence, protected communications, and proof of observation and intervention.</p></div>
+            <div><div class="pq">Mandatory controls</div><p class="pa dim">Jurisdictional authority, retention limits, access control, civilian protection, anti-discrimination testing, confidence thresholds, human decision, and appeal and audit paths where applicable.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="shields" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Counter-autonomy</div>
+        <h2>Accountable machine defense.</h2>
+        <p>The problem is not only detecting an uncrewed machine. It is proving whether that machine had authority to be there — and proving what was done about it.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">PALLADIUM</div><div class="prole">Sovereign zero-trust machine-defense and counter-autonomy shield.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The differentiator</div><p class="pa">A <b>Proof-of-Flight Mandate</b> — or equivalent machine-authority record: identify the machine, verify authority, check time and boundary, deconflict against friendly traffic, then allow, quarantine or escalate, and record proof.</p></div>
+            <div><div class="pq">Public boundary</div><p class="pa dim">Accountable counter-autonomy and authorized machine verification are described. Countermeasure engineering is not published; it belongs to the restricted channel with the customer's authority.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd Dome</div><div class="prole">City-scale accountable counter-UAS governance and proof.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it governs</div><p class="pa">Detection, identity, authorization, deconfliction, protected airspace, human decision and evidence — the accountability layer a city or authority needs before anything else happens.</p></div>
+            <div><div class="pq">What it is not</div><p class="pa dim">Not a claim that Wyrd has deployed an autonomous weapon.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="continuity" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Continuity</div>
+        <h2>When infrastructure fails, the mission does not.</h2>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">RADOME</div><div class="prole">Identity-gated continuity bubble for a degraded incident zone.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Core objects</div><p class="pa"><b>MeshNode</b> — local relay and compute. <b>ConnectivityBubble</b> — a bounded incident-zone network. <b>MessageBundle</b> — signed, delayed-sync packets. Plus RADOME Core, Mesh, Response, Citizen, Proof and Integrations for radios, sensors and agency systems.</p></div>
+            <div><div class="pq">Missions</div><div class="chips"><span>Warning</span><span>Evacuation</span><span>Rescue</span><span>Aid routing</span><span>Responder coordination</span><span>Family reunification</span><span>Incident proof</span></div></div>
+            <div><div class="pq">Doctrine</div><p class="pa">RADOME moves information, people and aid. It does not move explosives. Copper Dome is the lower-cost COTS configuration for resource-constrained regions.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">ORION / OSAS</div><div class="prole">Rapid logistics and relief-payload programme.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Roadmap</div><p class="pa">ORION-Micro (compact COTS pod) → ORION-Field (rugged local server, radios, drones, sensors and proof) → ORION-Coastal (buoy and underwater-scout support) → ORION-Strato and ORION-Space as future partnerships.</p></div>
+            <div><div class="pq">Honest framing</div><p class="pa dim">The first product is the pod, not a spaceship.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd ARK</div><div class="prole">Continuity intelligence for isolated facilities.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does offline</div><p class="pa">Power and resource forecasting, air and water monitoring, inventory, maintenance, repair guidance, access control, emergency procedures, communication, drills and signed records — for hospitals, mines, offshore platforms, embassies, bases, data centers, shelters and isolated communities.</p></div>
+            <div><div class="pq">Hard limit</div><p class="pa dim">Life-support control stays with certified deterministic controllers, interlocks and manual override. A language model does not control life support.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Anchorline &amp; Heimdall</div><div class="prole">Protected-site access, awareness and incident evidence.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Capabilities</div><p class="pa">Zones, detection, context, access, challenge, audit, replay, factory-gate logic and tamper-evident records, with Camera Watchman for locally processed, bounded-retention visual monitoring under human review.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="brief" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Engagement</div>
+        <h2>How a defense or government customer starts.</h2>
+        <p>Nothing begins with a live weapon system or a live network. It begins with a diagnostic, an authority map, and simulation.</p>
+      </div>
+      <div class="pipe">
+        <span class="pstage">diagnostic</span><span class="parr">→</span>
+        <span class="pstage">authority &amp; jurisdiction map</span><span class="parr">→</span>
+        <span class="pstage">simulation / SITL</span><span class="parr">→</span>
+        <span class="pstage">offline replay</span><span class="parr">→</span>
+        <span class="pstage">read-only field trial</span><span class="parr">→</span>
+        <span class="pstage">bounded mandate exercise</span><span class="parr">→</span>
+        <span class="pstage">controlled pilot</span><span class="parr">→</span>
+        <span class="pstage last">measured decision</span>
+      </div>
+      <div class="gate" style="margin-top:clamp(32px,4vw,44px)">
+        <div class="gk">The institutional briefing</div>
+        <p>The full CORP-US briefing — programme depth, the Azrael and LANCE tracks, PALLADIUM engineering, integration architecture and the fail-safe contracts — is released against <b>lawful customer authority, licensing, export review and procurement rules</b>, under NDA, to the responsible office. It is not a download.</p>
+        <div class="actions" style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap">
+          <a class="btn btn-primary" href="partners.html">Open a qualified channel <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="restricted.html">Visibility tiers &amp; gating</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Edge autonomy that decides under signal silence — and can still be held to account.</h2>
+      <p>Protection-led, bounded by doctrine and law, with a tamper-evident record an auditor can verify.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#brief">Request the briefing <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="platform.html">The platform underneath</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-bottom" style="border:none;margin-top:0">
+      <span>© 2026 Wyrd Group · CORP-US · <a href="company.html">Company</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="security.html">Security</a></span>
+      <span><a href="index.html">Home</a> · <a href="platform.html">Platform</a> · <a href="divisions.html">Divisions</a> · <a href="restricted.html">Restricted</a> · <a href="proof.html">Proof</a> · <a href="about.html">About</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.documentElement.classList.add('js');</script>
+<script src="wyrd-page.js"></script>
+<script src="wyrd-truesight.js"></script>
+</body>
+</html>

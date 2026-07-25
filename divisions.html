@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<style data-omelette-injected>html,body{background:transparent}</style><script data-omelette-injected>(()=>{{const W=new URLSearchParams(location.search).get("theme");if(W==="light"||W==="dark"){document.documentElement.dataset.theme=W}}{if(new URLSearchParams(location.search).get("_omthumb")==="1"){const W=(q)=>{const X=q.focus;if(!X)return;q.focus=function(H){X.call(this,{...H,preventScroll:true})}};W(HTMLElement.prototype);W(SVGElement.prototype);if(typeof MathMLElement!=="undefined"){W(MathMLElement.prototype)}const $=(q)=>{q.removeAttribute("autofocus");q.inert=true;if(!(q instanceof HTMLElement))q.removeAttribute("tabindex")};const z=(q)=>{if(q.hasAttribute("autofocus"))$(q);for(const X of q.querySelectorAll("[autofocus]")){$(X)}};z(document.documentElement);new MutationObserver((q)=>{for(const X of q){for(const H of X.addedNodes){if(H.nodeType===1)z(H)}}}).observe(document,{childList:true,subtree:true})}}{const W=()=>{try{if(document.querySelector('meta[name="color-scheme"]'))return;const $=getComputedStyle(document.documentElement).getPropertyValue("color-scheme").trim();if($&&$!=="normal")return;const z=(j)=>{if(!j)return null;const F=getComputedStyle(j).backgroundColor.match(/^rgba?\(\s*(\d+)[,\s]+(\d+)[,\s]+(\d+)(?:[,\s/]+([\d.]+%?))?\s*\)$/);if(!F)return null;const G=F[4]==null?1:parseFloat(F[4])/(F[4].endsWith("%")?100:1);if(G<0.99)return null;return[+F[1],+F[2],+F[3]]};const q=z(document.body)||z(document.documentElement);if(!q)return;const X=(j)=>{const F=j/255;return F<=0.04045?F/12.92:((F+0.055)/1.055)**2.4};const H=0.2126*X(q[0])+0.7152*X(q[1])+0.0722*X(q[2]);document.documentElement.style.setProperty("color-scheme",H<0.4?"dark":"light")}catch{}};if(document.readyState==="complete")W();else window.addEventListener("load",W)}var b=[];var p=false;var u=30000;var d=3000;document.addEventListener("DOMContentLoaded",()=>{const W=window.Babel;const $="om-src-id";if(W&&W.registerPlugin&&!(W.availablePlugins&&W.availablePlugins[$])){W.registerPlugin($,({types:H})=>({visitor:{JSXOpeningElement(j,F){const G=j.node;if(G.name&&G.name.type==="JSXMemberExpression")return;for(let Q=0;Q<G.attributes.length;Q++){const V=G.attributes[Q];if(V.type==="JSXAttribute"&&V.name&&V.name.name==="data-om-id")return}const P=F.file&&F.file.opts&&F.file.opts.filename||"?";const R=G.loc&&G.loc.start;const J=`jsx:${P}:${G.start??0}:${R?R.line:0}:${R?R.column+1:0}`;G.attributes.push(H.jsxAttribute(H.jsxIdentifier("data-om-id"),H.stringLiteral(J)))}}}))}const z="om-text-extract";let q=false;if(p&&W&&W.registerPlugin&&!(W.availablePlugins&&W.availablePlugins[z])){const H=window.React;if(H&&H.useSyncExternalStore&&H.createElement){q=true;const j={};const F=new Set;let G=0;window.__omTextO=j;window.__omTextSet=(J)=>{for(const Q in J){const V=J[Q];if(V==null)delete j[Q];else j[Q]=V}G++;F.forEach((Q)=>Q())};const P=(J)=>{F.add(J);return()=>F.delete(J)};const R=()=>G;window.__OmT=function J(Q){H.useSyncExternalStore(P,R,R);return H.createElement("span",{"data-om-text":Q.i,className:"__om-t"},Q.i in j?j[Q.i]:Q.children)};W.registerPlugin(z,({types:J})=>{const Q={style:1,script:1,noscript:1,textarea:1,title:1,option:1,text:1,tspan:1,textPath:1};const V={placeholder:1,alt:1,title:1,label:1,"aria-label":1,"aria-description":1,"aria-placeholder":1};const Y=(K,M)=>J.logicalExpression("??",J.memberExpression(J.logicalExpression("||",J.memberExpression(J.identifier("window"),J.identifier("__omTextO")),J.objectExpression([])),J.stringLiteral(K),true),M);const Z=(K)=>K.file&&K.file.opts&&K.file.opts.filename||"?";const B=(K)=>K.file&&K.file.code||"";const U=(K,M)=>{const L=(D)=>D&&D.start!=null&&D.end!=null&&(D.type==="StringLiteral"||D.type==="TemplateLiteral"&&D.expressions.length===0)?[D.start,D.end]:null;const N=L(M);if(N)return N;if(M&&M.type==="Identifier"){const D=K.scope.getBinding(M.name);if(D&&D.constant&&D.path.node.type==="VariableDeclarator"){return L(D.path.node.init)}}return null};const x=(K,M,L)=>{const N=K.node;let D=false;const f=(w,A)=>{D=true;return J.jsxElement(J.jsxOpeningElement(J.jsxIdentifier("__OmT"),[J.jsxAttribute(J.jsxIdentifier("i"),J.stringLiteral(w))],false),J.jsxClosingElement(J.jsxIdentifier("__OmT")),[A],false)};const C=N.children.map((w)=>{if(w.type==="JSXText"){if(w.start==null||w.end==null)return w;const A=L.slice(w.start,w.end);const S=A.length-A.trimStart().length;const O=A.length-A.trimEnd().length;if(S+O>=A.length)return w;return f(`txt:${M}:${w.start+S}:${w.end-O}`,w)}if(w.type==="JSXExpressionContainer"){const A=U(K,w.expression);if(A)return f(`str:${M}:${A[0]}:${A[1]}`,w)}return w});if(D)N.children=C};return{visitor:{JSXOpeningElement(K,M){const L=K.node;const N=Z(M);const D={};for(let f=0;f<L.attributes.length;f++){const C=L.attributes[f];if(C.type!=="JSXAttribute"||!C.name)continue;const w=C.name.name;if(!V[w])continue;if(!C.value||C.value.type!=="StringLiteral")continue;if(C.value.start==null||C.value.end==null)continue;const A=`txt:${N}:${C.value.start}:${C.value.end}`;D[w]=A;C.value=J.jsxExpressionContainer(Y(A,J.stringLiteral(C.value.value)))}if(Object.keys(D).length){L.attributes.push(J.jsxAttribute(J.jsxIdentifier("data-om-text-attrs"),J.stringLiteral(JSON.stringify(D))))}},JSXElement(K,M){const L=K.node.openingElement;const N=L&&L.name&&L.name.name;if(N==="__OmT")return;if(typeof N==="string"&&Q[N])return;x(K,Z(M),B(M))},JSXFragment(K,M){x(K,Z(M),B(M))}}}})}}const X=q?["transform-react-jsx-source",$,z]:["transform-react-jsx-source",$];document.querySelectorAll('script[type="text/babel"],script[type="text/jsx"]').forEach((H,j)=>{const F=H.getAttribute("data-plugins")||"";const G=X.filter((P)=>F.indexOf(P)<0);if(G.length){H.setAttribute("data-plugins",F?`${F},${G.join(",")}`:G.join(","))}if(!H.hasAttribute("data-filename")){H.setAttribute("data-filename",H.getAttribute("src")||`inline-${j}`)}})});var I=window.parent;var g="not editable here — open the project in the Claude Design editor to save";var n=()=>Promise.resolve({persisted:false,noHost:true,reason:g});var k=n;var v="data/storage.json";var l=()=>{try{const W=new URL(document.baseURI);const $=W.pathname.match(/\/projects\/([^/]+)\/serve\//);if($)return $[1];return W.hostname.split(".")[0]||""}catch{return location.hostname.split(".")[0]||""}};var o=()=>{try{const W=new URL(document.baseURI);const $=W.pathname.indexOf("/serve/");if($>=0)return W.origin+W.pathname.slice(0,$+"/serve/".length)+v}catch{}return"./"+v};var E=null;var _=()=>{if(!E){E=fetch(o(),{cache:"no-store"}).then((W)=>{if(W.ok)return W.text();return W.status===404?"":null}).catch(()=>null).then((W)=>{if(W===null){E=null;return null}const $=new Map;if(!W)return $;let z;try{z=JSON.parse(W)}catch{console.warn("[omelette.storage] "+v+" is not valid JSON; treating the store as unreadable so a save cannot overwrite the "+"hand-edited bytes. Fix the JSON (or delete the file) to re-enable persistence.");E=null;return null}if(z===null||typeof z!=="object"||Array.isArray(z)){console.warn("[omelette.storage] "+v+" doesn't hold a JSON object; treating the store as unreadable so a save cannot "+"overwrite the hand-edited bytes. Make the top level a JSON object to re-enable persistence.");E=null;return null}const q=z;if("data"in q){const X=q.data;if(X===null||typeof X!=="object"||Array.isArray(X)){console.warn("[omelette.storage] "+v+' has a "data" field that is not a JSON object; treating the store as unreadable so a '+'save cannot overwrite the hand-edited bytes. Make "data" a JSON object to re-enable persistence.');E=null;return null}const H=q._meta;const j=H!==null&&typeof H==="object"?H.project:undefined;if(typeof j==="string"&&j!==""&&j!==l())return $;for(const F of Object.keys(X))$.set(F,X[F]);return $}for(const X of Object.keys(q)){if(X!=="_meta")$.set(X,q[X])}return $})}return E};var y=(W)=>k(v,JSON.stringify({_meta:{project:l(),version:1},data:Object.fromEntries(W)},null,2));var m=Promise.resolve();var T=(W)=>{const $=m.then(W);m=$.then(()=>{return},()=>{return});return $};var s=/sk-(?:ant-)?[A-Za-z0-9_-]{16,}|AKIA[0-9A-Z]{16}|gh[pousr]_[A-Za-z0-9]{20,}|xox[a-z]-[A-Za-z0-9][A-Za-z0-9-]{9,}|AIza[0-9A-Za-z_-]{30,}|-----BEGIN [A-Z ]*PRIVATE KEY-----/;var a=/password|passwd|secret|api[_-]?key|access[_-]?token|auth[_-]?token|credential/i;var r=(W,$,z)=>{if(s.test($)||a.test(W)&&typeof z==="string"&&z.length>=8){console.warn('[omelette.storage] the value for "'+W+'" looks like a credential. The storage file is a plaintext project file — visible to '+"everyone with project access and copied when the project is duplicated. Do not store secrets here.")}};var c={persisted:false,reason:"could not load the existing store — not overwriting it"};var i={persisted:false,reason:"stored value changed since a failed read — re-read this key before saving"};var h=new Set;var t={get:(W)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.get: key must be a string"))}return T(_).then(($)=>{if($===null){h.add(W);return null}h.delete(W);if(!$.has(W))return null;const z=$.get(W);return z==null?null:JSON.parse(JSON.stringify(z))})},set:(W,$)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.set: key must be a string"))}let z;try{z=JSON.stringify($)}catch(X){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable ("+String(X)+")"))}if(z===undefined){return Promise.reject(new TypeError("storage.set: value must be JSON-serializable"))}r(W,z,$);const q=JSON.parse(z);return T(()=>_().then((X)=>{if(X===null)return c;if(h.has(W)){if(X.has(W))return i;h.delete(W)}X.set(W,q);return y(X)}))},delete:(W)=>{if(typeof W!=="string"){return Promise.reject(new TypeError("storage.delete: key must be a string"))}return T(()=>_().then(($)=>{if($===null)return c;if(h.has(W)){if($.has(W))return i;h.delete(W)}$.delete(W);return y($)}))},keys:()=>T(_).then((W)=>W===null?[]:Array.from(W.keys()))};window.omelette={writeFile:(W,$)=>k(W,$).then((z)=>{if(!z.persisted&&!z.noHost){throw new Error(z.reason||"write failed")}}),storage:t};if(I&&I!==window){const W=(J,Q)=>{try{I.postMessage({__omelette_log:true,type:J,data:Q},"*")}catch{}};["log","warn","error"].forEach((J)=>{const Q=console[J];console[J]=(...V)=>{const Y=V.map((Z)=>{try{return typeof Z==="object"?JSON.stringify(Z):String(Z)}catch{try{return String(Z)}catch{return"[unstringifiable]"}}}).join(" ");W(J,Y);Q.apply(console,V)}});window.addEventListener("error",(J)=>{const Q=J.target;if(Q&&Q!==window&&Q.tagName){const V=Q.src||Q.href||"";W("resource_error",`${Q.tagName} failed to load: ${V}`)}else{W("error",`${J.message||"Unknown error"} at ${J.filename||"?"}:${J.lineno||0}:${J.colno||0}`)}},true);window.addEventListener("unhandledrejection",(J)=>{const Q=J.reason;const V=Q instanceof Error?`${Q.message} ${Q.stack}`:String(Q);W("error",`Unhandled rejection: ${V}`)});window.addEventListener("click",(J)=>{if(J.defaultPrevented||J.button!==0)return;if(J.metaKey||J.ctrlKey||J.shiftKey||J.altKey)return;const Q=J.composedPath?J.composedPath():[];const V=["button","input","select","textarea","summary","label"];let Y=null;for(const x of Q){if(!(x instanceof Element))continue;if(x.localName==="a"){if(!(x instanceof HTMLAnchorElement))return;Y=x;break}if(V.indexOf(x.localName)!==-1)return}if(!Y)return;if(Y.isContentEditable)return;const Z=Y.closest("[contenteditable]");if(Z&&Z.getAttribute("contenteditable")!=="false")return;const B=(Y.getAttribute("target")||"_self").toLowerCase();if(B!=="_self"&&B!=="_top"&&B!=="_parent")return;let U;try{U=new URL(Y.href)}catch{return}if(U.protocol!=="http:"&&U.protocol!=="https:")return;if(location.origin==="null")return;if(U.origin===location.origin)return;J.preventDefault();window.open(U.href,"_blank","noopener,noreferrer")});const $=()=>{try{I.postMessage({type:"omelette:height",height:document.documentElement.scrollHeight},"*")}catch{}};if(window.ResizeObserver)new ResizeObserver($).observe(document.documentElement);const z=()=>{$();if(!document.querySelector('script[type="text/babel"],script[type="text/jsx"]'))return;const J=()=>document.getElementById("root")||document.querySelector("body > div[id]");const Q=J()?.firstElementChild??null;let V=0;const Y=()=>{const Z=J();if(Z&&Z.firstElementChild!==Q||++V>30){$();return}setTimeout(Y,100)};setTimeout(Y,100)};if(document.readyState==="complete")z();else window.addEventListener("load",z);const q={};let X=0;const H=(J)=>new Promise((Q,V)=>{if(!b.length){V(new Error("claude.complete: no parent origin"));return}const Y=`c${++X}`;const Z=()=>setTimeout(()=>{delete q[Y];V(new Error(`claude.complete: no data for ${u/1000}s`))},u);const B=Z();q[Y]={resolve:Q,reject:V,text:"",t:B,arm:Z};try{for(const U of b){I.postMessage({__om_api:true,id:Y,body:J},U)}}catch(U){clearTimeout(B);delete q[Y];V(U)}});const j=8;const F=async(J,Q)=>{if(!Array.isArray(J.messages)){throw new Error("claude.complete: tools require a messages array")}const V=J.messages.slice();const Y={...J,tools:J.tools.map((U)=>{if(U===null||typeof U!=="object")return U;const x={};for(const K of Object.keys(U)){if(typeof U[K]!=="function")x[K]=U[K]}return x})};const Z=Y.tool_choice;const B=Z!=null&&(Z.type==="any"||Z.type==="tool")?{...Y,tool_choice:Z.disable_parallel_tool_use!==undefined?{type:"auto",disable_parallel_tool_use:Z.disable_parallel_tool_use}:{type:"auto"}}:Y;for(let U=0;U<j;U++){const x=await H({...U===0?Y:B,messages:V});const K=x.message;const M=K&&Array.isArray(K.content)?K.content:null;const L=M?M.filter((D)=>D?.type==="tool_use"):[];if(K?.stop_reason!=="tool_use"||L.length===0){return x.text}const N=[];for(const D of L){const f=Q.get(D.name);if(!f){N.push({type:"tool_result",tool_use_id:D.id,content:`no handler for tool "${D.name}"`,is_error:true});continue}try{const C=await f(D.input);const w=typeof C==="string"?C:R(C)??"";N.push({type:"tool_result",tool_use_id:D.id,content:w})}catch(C){N.push({type:"tool_result",tool_use_id:D.id,content:String(C?.message??C??"tool handler failed"),is_error:true})}}V.push({role:"assistant",content:M},{role:"user",content:N})}throw new Error(`claude.complete: exceeded ${j} tool turns`)};window.claude={complete(J){const Q=J;if(Q!==null&&typeof Q==="object"&&Array.isArray(Q.tools)&&Q.tools.some((V)=>V!==null&&typeof V==="object"&&typeof V.run==="function")){const V=new Map;for(const Y of Q.tools){if(Y!==null&&typeof Y==="object"&&typeof Y.run==="function"){V.set(String(Y.name),Y.run)}}return F(Q,V)}return H(J).then((V)=>V.text)}};const G={};let P=0;k=(J,Q)=>new Promise((V)=>{if(!b.length){V({persisted:false,noHost:true,reason:g});return}const Y=`f${++P}`;const Z=setTimeout(()=>{delete G[Y];V({persisted:false,noHost:true,reason:g})},d);G[Y]={settle:V,t:Z};try{for(const B of b){I.postMessage({__om_file:true,id:Y,op:"write",path:J,content:Q},B)}}catch{clearTimeout(Z);delete G[Y];V({persisted:false,noHost:true,reason:g})}});const R=(J)=>{try{return JSON.stringify(J)}catch{return JSON.stringify(String(J))}};window.addEventListener("message",(J)=>{if(b.indexOf(J.origin)<0)return;if(J.source!==I)return;const Q=J.data;if(!Q)return;if(Q.type==="omelette-preview-refresh"){if(typeof Q.token!=="string"||!/^[0-9a-f.-]+(\.(rc|pr-[0-9]+))?(\.[0-9]+\.[0-9a-f]{16})?$/.test(Q.token))return;const Z=Math.max(1,Math.floor((Q.expiresAt||0)-Date.now()/1000));document.cookie="__Host-omelette-preview="+Q.token+"; Path=/; Secure; SameSite=None; Partitioned; Max-Age="+Z;return}if(Q.__om_file_r){const Z=G[Q.id];if(!Z)return;clearTimeout(Z.t);delete G[Q.id];Z.settle(Q.ok?{persisted:true}:{persisted:false,reason:Q.error||"write failed"});return}if(Q.__om_api_r){const Z=q[Q.id];if(!Z)return;if(Q.error!=null){clearTimeout(Z.t);delete q[Q.id];Z.reject(new Error(Q.error));return}if(Q.chunk!=null){clearTimeout(Z.t);Z.t=Z.arm();Z.text+=Q.chunk;return}if(Q.done){clearTimeout(Z.t);delete q[Q.id];Z.resolve({text:Q.text!=null?Q.text:Z.text,message:Q.message});return}return}if(!Q.__om_eval)return;const V=Q;const Y=(Z)=>{J.source.postMessage({...Z,__om_eval_r:1,id:V.id},J.origin)};try{const Z=(0,eval)(V.code);if(Z&&typeof Z.then==="function"){Z.then((B)=>Y({ok:1,v:R(B)}),(B)=>Y({ok:0,e:String(B)}))}else{Y({ok:1,v:R(Z)})}}catch(Z){Y({ok:0,e:String(Z)})}})}})();
+</script>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Divisions — Wyrd Group</title>
+<meta name="description" content="Wyrd Labs creates the software. Nestar, Biota and CORP-US turn it into market products. Every product entry carries its maturity, its evidence, what still has to be proved, and its visibility." />
+<link rel="canonical" href="https://wyrd-group.com/divisions.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26'%3E%3Cg stroke='%23f2f3f4' stroke-width='2' fill='none'%3E%3Cline x1='11' y1='1' x2='11' y2='25'/%3E%3Cline x1='4' y1='6' x2='18' y2='4'/%3E%3Cline x1='4' y1='13' x2='18' y2='15'/%3E%3Cline x1='4' y1='21' x2='18' y2='19'/%3E%3C/g%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Wyrd Group" />
+<meta property="og:title" content="Divisions — Wyrd Group" />
+<meta property="og:description" content="Wyrd Labs creates the software. Nestar, Biota and CORP-US turn it into market products. Every product entry carries its maturity, its evidence, what still has to be proved, and its visibility." />
+<meta property="og:url" content="https://wyrd-group.com/divisions.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#060708" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="wyrd-palantir.css" />
+<link rel="stylesheet" href="wyrd-group.css" />
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Wyrd">
+      <svg width="16" height="20" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+        <line x1="11" y1="1" x2="11" y2="25" stroke-width="1.6"></line>
+        <line x1="4" y1="6" x2="18" y2="4" stroke-width="1.6"></line>
+        <line x1="4" y1="13" x2="18" y2="15" stroke-width="1.6"></line>
+        <line x1="4" y1="21" x2="18" y2="19" stroke-width="1.6"></line>
+      </svg>
+      <span class="word">WYRD</span>
+    </a>
+    <div class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a class="on" href="divisions.html">Divisions</a>
+      <a href="corp-us.html">CORP-US</a>
+      <a href="proof.html">Proof</a>
+      <a href="research.html">Research</a>
+      <a href="partners.html">Design Partners</a>
+      <a href="about.html">About</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="ask.html">Ask Wyrd</a>
+    <button class="nav-burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="0" y1="1" x2="18" y2="1"></line><line x1="0" y1="7" x2="18" y2="7"></line><line x1="0" y1="13" x2="18" y2="13"></line></svg></button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" data-open="false">
+  <div class="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="dhead">
+      <span>Wyrd Group</span>
+      <button class="dclose" type="button" aria-label="Close menu"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="1" x2="14" y2="14"></line><line x1="14" y1="1" x2="1" y2="14"></line></svg></button>
+    </div>
+      <a class="dlink" href="platform.html">Platform</a>
+      <a class="dlink on" href="divisions.html">Divisions</a>
+      <a class="dlink" href="corp-us.html">CORP-US</a>
+      <a class="dlink" href="proof.html">Proof</a>
+      <a class="dlink" href="research.html">Research</a>
+      <a class="dlink" href="partners.html">Design Partners</a>
+      <a class="dlink" href="about.html">About</a>
+      <a class="btn btn-primary dcta" href="ask.html">Ask Wyrd</a>
+  </div>
+</div>
+
+<div class="classbar">
+  <div class="wrap">
+    <span class="sig">Divisions</span>
+    <span class="hidexs">Wyrd Labs · Nestar · Biota · CORP-US</span>
+    <span class="spacer"></span>
+    <span>Public · partner detail on request</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <header class="phead">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> The structure</div>
+      <h1>Wyrd Labs creates the software. The divisions turn it into market products.</h1>
+      <p>One software-production division and three commercial divisions, plus group-level adjuncts. Each product row opens into what it is, who it is for, which shared blocks it inherits, where it sits on the maturity ladder, and what still has to be proved.</p>
+      <div class="legend">
+        <span class="li"><span class="st working">Working software</span></span>
+        <span class="li"><span class="st alpha">Integrated alpha</span></span>
+        <span class="li"><span class="st pilot">Pilot candidate</span></span>
+        <span class="li"><span class="st program">Integration program</span></span>
+        <span class="li"><span class="st research">Research prototype</span></span>
+        <span class="li"><span class="st arch">Architecture defined</span></span>
+        <span class="li"><span class="st option">Future option</span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- WYRD LABS -->
+  <section class="sec" id="labs" style="padding-top:clamp(40px,6vw,64px)">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Wyrd Labs</div>
+        <h2>The software-production division.</h2>
+        <p>Not a speculative research annex. Wyrd Labs owns the shared code base, architecture, core engines, cryptography, simulation, optimization, deployment controls, proofs, tests and the integration support the commercial divisions depend on.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">ICARUS Forge</div><div class="prole">Generate, test and compare governed agents and policies.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Who it is for</div><p class="pa">Wyrd engineering and, later, institutions defining their own agent policy sets.</p></div>
+            <div><div class="pq">Blocks inherited</div><div class="chips"><span>ICARUS</span><span>Proof Spine</span><span>DAEDALUS</span></div></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Selection and evaluation methodology under real domain constraints.</p></div>
+            <div><div class="pq">Visibility</div><p class="pa dim">Partner</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Conformity Lab</div><div class="prole">Rehearse certification and audit pressure before formal review.</div><span class="st working">Working software</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does</div><p class="pa">Maps evidence and gaps against SOC 2, ISO/IEC 27001, 42001 and 27701, GDPR, the EU AI Act, the Cyber Resilience Act, FIPS 140-3, Common Criteria, FedRAMP, IEC 62443 and relevant medical-sector routes.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">It is not a certification and not an auditor's opinion. The operating rule: do not buy the formal stamp until the private audit is boring.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd PreCert</div><div class="prole">Readiness maps, evidence templates and gap reports.</div><span class="st working">Working software</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Who it is for</div><p class="pa">Institutions that need to see the shape of an assessment before they commission one.</p></div>
+            <div><div class="pq">Visibility</div><p class="pa dim">Partner</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">NINA Foundry</div><div class="prole">Generate and benchmark optimization methods under constraints.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">The scientific hypothesis is unproven and the measurement instrument is being repaired. Near-term value comes from strong baselines plus domain constraints, local execution and proof.</p></div>
+            <div><div class="pq">Blocks inherited</div><div class="chips"><span>NINA</span><span>ARGOS</span><span>Proof Spine</span></div></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd IP Guard</div><div class="prole">Transparent protection for proprietary Wyrd components.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it may do</div><p class="pa">Ship compiled packages, verify hashes and signatures, detect tampering, watermark builds per client, encrypt sensitive modules, suspend the affected Wyrd module after a contract violation, and emit a proof receipt.</p></div>
+            <div><div class="pq">What it must never do</div><p class="pa dim">Seize control of a client machine, behave like a rootkit, delete client files, disable unrelated systems, hide surveillance or block agreed audits. Wyrd locks its own components, not the client's computer.</p></div>
+          </div>
+        </details>
+      </div>
+      <div class="note" style="margin-top:26px">
+        <div class="k">Also inside Labs</div>
+        <p>Engine Corpus · Eitri Forge · Flowcore · sovereign coding stack · OSS intake and governance · Substrate Hypothesis · agentic-genetics research. See <a href="research.html" style="color:var(--signal)">Research</a> for what each one is testing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NESTAR -->
+  <section class="sec" id="nestar" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Nestar</div>
+        <h2>Governed AI for companies and institutions.</h2>
+        <p>What an institution buys is a private agent environment: every agent has an identity and a mandate, sensitive actions require approval, private memory stays within policy, cloud use is bounded, actions create proof, access can be revoked, and deployment can be repaired or rolled back.</p>
+        <p><em>Nestar is not ICARUS. ICARUS is the authority substrate; Nestar is the enterprise product built with it.</em></p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">Nestar Agentic OS</div><div class="prole">Company-wide governed environment for agents, memory, approvals, proof and workflows.</div><span class="st alpha">Integrated alpha</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Who it is for</div><p class="pa">Regulated enterprises, professional firms, public bodies and any institution where an unattributed AI action is unacceptable.</p></div>
+            <div><div class="pq">The problem it solves</div><p class="pa">Capable models cannot be let near consequential work because nothing bounds, approves, records or revokes what they do.</p></div>
+            <div><div class="pq">Blocks inherited</div><div class="chips"><span>ICARUS</span><span>ALEC</span><span>CAOS</span><span>Proof Spine</span><span>Master Brain</span><span>RASOS</span></div></div>
+            <div><div class="pq">Core modules</div><div class="chips"><span>Approval Inbox</span><span>Action Firewall</span><span>Agent Passport</span><span>Mandate Ledger</span><span>Proof Pack</span><span>Secure Memory</span><span>Frontier Connector</span></div></div>
+            <div><div class="pq">Tiers</div><p class="pa">Core · Pro · Sovereign (local, air-gapped or high-assurance) · Custom.</p></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Release packaging, independent security review and design-partner field evidence.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Bank &amp; regulated-enterprise edition</div><div class="prole">Employee, department and central models under one authority and proof layer.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The shape</div><p class="pa">An employee local agent for role-personal work; department models for role-specific knowledge; a central model for shared policy, products and institutional memory — all inside the internal network, with ICARUS for role, mandate, approval and dual key, Proof Spine for audit evidence, and RASOS for deployment and rollback.</p></div>
+            <div><div class="pq">"Personal work" means</div><p class="pa dim">Drafting, summarizing, searching approved knowledge, preparing forms, organizing tasks, translating, meeting preparation, code or analysis assistance, building an approval packet. It does not mean the agent holds the employee's authority or can silently send, pay, trade, approve or alter records.</p></div>
+            <div><div class="pq">Sector editions</div><div class="chips"><span>Finance</span><span>Legal</span><span>Advisory</span><span>Healthcare admin</span><span>Government</span><span>Manufacturing &amp; OT</span><span>Education</span><span>Energy</span></div></div>
+            <div><div class="pq">Visibility</div><p class="pa dim">Public shape · partner detail</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Mandate Network</div><div class="prole">The authorization network for agentic finance.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does</div><p class="pa">Proves whether an AI agent is authorized to request a value-moving action before the request reaches a bank, card network, payment API, tokenization platform, FX rail or trade-finance workflow.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim"><b>Mandate Network does not move money.</b> It does not hold funds, issue money or act as a bank, payment rail, exchange or currency issuer.</p></div>
+            <div><div class="pq">Family</div><div class="chips"><span>Mandate Pass</span><span>Mandate Ledger</span><span>Mandate Switch</span><span>Mandate Proof</span><span>Mandate Console</span><span>Mandate Corridor</span><span>Agent Trust Layer</span><span>KYA</span></div></div>
+            <div><div class="pq">The distinction</div><p class="pa">A card network asks whether a card can pay. Mandate asks whether <em>this agent</em> is allowed to request <em>this payment</em>, for this reason, under this owner's rules, right now — and whether it can be proved afterwards.</p></div>
+            <div class="pspan"><div class="pq">WAI / Wyrd Credits</div><p class="pa dim">An exploratory economic-layer concept only. Not a launched currency, payment instrument or regulated financial product.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Nestar Perfect-Secrecy Vault</div><div class="prole">Information-theoretic k-of-n protection for crown-jewel material.</div><span class="st working">Working software</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Evidence</div><p class="pa">Canonical main is clean; k-of-n vault, audit and cryptographic modules exist.</p></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Formal cryptographic review before production use.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Anchorline</div><div class="prole">Property, factory and secure-site access-control and concierge-security brain.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does</div><p class="pa">Zones, detection, context, access, challenge, audit, replay, factory-gate logic and tamper-evident records. Camera Watchman adds local processing, bounded retention, redaction and human review.</p></div>
+            <div><div class="pq">Naming warning</div><p class="pa dim">This is not the maritime program. The historical maritime Anchorline direction is parked; maritime work is Leviathan.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Work surfaces &amp; agents</div><div class="prole">Command Bar, Meeting Copilot, Phone Agent, Form Filer, Document Builder, cited-or-refuse research.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The rule across all of them</div><p class="pa">Each surface routes through mandate and approval. A prepared action — a sent message, a filed form, a negotiated position, a payment request — waits for the authority that owns it.</p></div>
+            <div><div class="pq">Also recorded</div><div class="chips"><span>Screen Operator</span><span>Negotiator</span><span>IVR navigator</span><span>Supernova workforce</span><span>Nestar Station</span><span>Nestar Conductor</span><span>Uriel Cortex</span></div></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIOTA -->
+  <section class="sec" id="biota" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Biota</div>
+        <h2>The person-facing division.</h2>
+        <p>Personal intelligence, body signals, health and wellness, performance, devices, home, environment, mobility and daily routine — joined under one consent and proof model. Your devices know you. Your data obeys you. Your Cortex serves you.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">Personal Cortex / ALEC</div><div class="prole">A governed model of how a person thinks, decides, refuses, approves and prefers.</div><span class="st alpha">Integrated alpha</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Core functions</div><p class="pa">Private memory, owner-specific decisions, owner review, permissions, privacy boundaries, revocation, deterministic fallback, tutor behaviour, receipts, local/cloud routing, and a voice interface through Solomon.</p></div>
+            <div><div class="pq">The governance layer</div><div class="chips"><span>WyrdID</span><span>Personal Memory Graph</span><span>Consent Kernel</span><span>Agent Runtime</span><span>Model Router</span><span>Receipt Layer</span><span>Vault</span><span>Device Mesh</span></div></div>
+            <div><div class="pq">Evidence</div><p class="pa">1,668 passed, 10 skipped; 67/67 release commands; 8/8 owner self-test on the ALEC · Solomon · CAOS loop.</p></div>
+            <div class="pspan"><div class="pq">Approval flow — illustrative</div><div class="pipe" style="margin-top:10px"><span class="pstage">signal arrives</span><span class="parr">→</span><span class="pstage">ALEC opinion · “owner would likely approve”</span><span class="parr">→</span><span class="pstage">policy check · within standing doctrine</span><span class="parr">→</span><span class="pstage">owner approves · one tap</span><span class="parr">→</span><span class="pstage last">signed receipt</span></div></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Physical device deployment and production assurance.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Themis</div><div class="prole">Sport, athlete development and performance intelligence.</div><span class="st working">Working software</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does</div><p class="pa">Athlete profiles, scouting, ratings, projections, search and similarity, video analysis, sport-specific gym coaching, training, nutrition, body measurement, movement feedback, drills and next-session planning across football, basketball, tennis, golf, boxing and strength training.</p></div>
+            <div><div class="pq">Evidence</div><p class="pa">Backend re-run 2026-07-24: 385 passed, 2 skipped. One of Biota's most complete families.</p></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Frontend and real-world sport validation should be refreshed before external claims.</p></div>
+            <div><div class="pq">Visibility</div><p class="pa dim">Public · design partners sought</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Raphael</div><div class="prole">Doctor-support infrastructure — not an AI doctor.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it does</div><p class="pa">Hospital workflow intelligence, medical knowledge retrieval, structured differential-diagnosis support, patient-flow planning, clinician councils, alerts, evidence, oversight queues and Biota signal ingestion.</p></div>
+            <div><div class="pq">The authority model</div><p class="pa">Raphael suggests. The doctor judges. Raphael records proof. The doctor signs off.</p></div>
+            <div><div class="pq">Evidence</div><p class="pa">Capability brief records 250 passing tests and clean lint at the referenced commit.</p></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">No clinical validation and no production medical claim. Aceso Clinical would additionally require medical validation, a quality-management system, regulatory classification, clinician governance and real-world evidence.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Biota Vital</div><div class="prole">Body and environment signals into owner-approved changes in daily life.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Inputs</div><div class="chips"><span>Watch</span><span>Ring</span><span>Patch</span><span>Sleep</span><span>HRV</span><span>Temperature</span><span>SpO₂</span><span>Activity</span><span>Nutrition</span><span>Air quality</span></div></div>
+            <div><div class="pq">Outputs</div><p class="pa">Hydration, recovery and sleep adjustments, sound and comfort changes, meal and workload suggestions, clinician escalation, and purchase requests that require approval.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Vital Wellness stays separate from regulated clinical claims.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd Habitat &amp; Home</div><div class="prole">Retrofit → Cortex Interior → printed shell → robotic build site → living house.</div><span class="st option">Future option</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The idea</div><p class="pa">Your home becomes a body for your private AI — sensors, climate, lighting, privacy, pantry and comfort first; layout, acoustics and recovery design next; partner-built structure after that.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Wyrd does not need to become a construction company. It owns the intelligence, design, proof and operating layer; partners build the physical structure.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Aceso</div><div class="prole">Healthcare workflow and clinical-mode family.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The family</div><p class="pa">Clinician interfaces, hospital coordination, medical logistics, monitored escalation, clinical protocols and patient support.</p></div>
+            <div><div class="pq">Aceso Clinical requires</div><p class="pa dim">Medical validation, quality management, regulatory classification, clinician governance and real-world evidence — before any clinical claim exists.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Wyrd Home</div><div class="prole">Private home intelligence and automation.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it covers</div><p class="pa">Sensors, climate, lighting, privacy, pantry, comfort, adaptive sound and focus environments — inside owner policy, with receipts.</p></div>
+            <div><div class="pq">Related</div><p class="pa dim">Habitat extends this to interior design, printed shells and robotic build sites with partner builders.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Biota Air</div><div class="prole">Civil drone logistics and air readiness.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Air Readiness</div><p class="pa">Helps cities, hospitals, campuses and agencies plan approved corridors, landing zones, emergency priority, noise and privacy policy, U-space integration, proof of flight, citizen transparency, and insurance and authorization packets.</p></div>
+            <div><div class="pq">The European strategy</div><p class="pa">Ground-first, air-ready. Drones enter dense cities where public value justifies them: medicine, blood, samples, emergency supplies, disaster response, fixed corridors.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Personal Studio &amp; personal concepts</div><div class="prole">Owner-specific creation, object memory, private marketplace.</div><span class="st option">Future option</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Recorded concepts</div><div class="chips"><span>Personal Assistant</span><span>Personal Studio</span><span>Object memory</span><span>Privacy cameras</span><span>Local device mesh</span><span>Skill packs</span><span>Atelier</span><span>Dating AI</span><span>Faraday Pearls</span></div></div>
+            <div><div class="pq">Boundaries</div><p class="pa dim">Dating assistance carries high privacy and manipulation boundaries. Faraday Pearls stays labelled research until feasibility and safety are demonstrated.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Devices &amp; Wyrd Lens</div><div class="prole">One governed mind expressed through several trust surfaces.</div><span class="st option">Future option</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Recorded surfaces</div><div class="chips"><span>Computer</span><span>Phone</span><span>Tablet</span><span>Cortex node</span><span>Watch</span><span>Ring</span><span>Jewelry</span><span>Glasses / Lens</span><span>Home Hub</span></div></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Consumer and field editions of Wyrd Lens stay visually and legally separated. Faraday Pearls remains labelled research until physical feasibility and safety are demonstrated.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORP-US -->
+  <section class="sec" id="corpus" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> CORP-US</div>
+        <h2>Protected operations, civil resilience and field systems.</h2>
+        <p>Defense support, civil protection, emergency response, critical-infrastructure defense, resilient communications, search and rescue, logistics, monitoring, authorized cybersecurity and governed field intelligence — with human accountability throughout. The summary below is the short form; the division has its own page.</p>
+        <div class="actions" style="display:flex;gap:12px;margin-top:26px;flex-wrap:wrap"><a class="btn btn-primary" href="corp-us.html">Open the CORP-US division <span class="arr">→</span></a></div>
+      </div>
+      <div class="note" style="margin-top:26px">
+        <div class="k">The boundary, stated first</div>
+        <p>CORP-US spans civil protection through to restricted defense support. Restricted capability requires lawful customer authority, licensing, export review, procurement rules, independent safety and legal controls, explicit human command and domain-specific approval. Those programs are <b>named and placed</b> below and on the <a href="restricted.html" style="color:var(--signal)">restricted &amp; partner register</a>; their operational content — targeting, weapons, kill-chain logic, offensive autonomy, intrusion methods — is not published in any Wyrd material, at any tier.</p>
+      </div>
+      <div class="plist">
+        <details class="prow2">
+          <summary><div class="pname">RADOME</div><div class="prole">Civil-defense continuity — a temporary, identity-gated connectivity bubble.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Core objects</div><p class="pa"><b>MeshNode</b> — local relay and compute. <b>ConnectivityBubble</b> — a bounded incident-zone network. <b>MessageBundle</b> — signed, delayed-sync packets.</p></div>
+            <div><div class="pq">Use cases</div><div class="chips"><span>Warning</span><span>Evacuation</span><span>Rescue</span><span>Aid routing</span><span>Responder coordination</span><span>Family reunification</span><span>Incident proof</span></div></div>
+            <div><div class="pq">The canon line</div><p class="pa">RADOME moves information, people and aid. It does not move explosives.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Not permanent national connectivity. Copper Dome is the lower-cost COTS configuration for resource-constrained regions.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Samael</div><div class="prole">Civilian protection and protective field operations.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it supports</div><p class="pa">Fire, flood, earthquake, rescue, missing-person search, medical evacuation, infrastructure incidents, hazardous-area work, civil defense and resilient field communication.</p></div>
+            <div><div class="pq">The narrative</div><p class="pa">Judgment before action: observe, verify, understand, seek authority, protect, record.</p></div>
+            <div><div class="pq">Naming warning</div><p class="pa dim">Samael (civilian protection) and Azrael (restricted military operations) are separate programs and must not be merged. Azrael material is not published here.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">HIVE</div><div class="prole">Coordination across drones, ground robots, vessels, underwater vehicles and sensors.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Civil and institutional uses</div><div class="chips"><span>Mapping</span><span>Thermal inspection</span><span>Search &amp; rescue</span><span>Fire observation</span><span>Flood assessment</span><span>Medical delivery</span><span>Infrastructure inspection</span><span>Ports</span><span>Emergency relay</span></div></div>
+            <div><div class="pq">Hardware strategy</div><p class="pa dim">Partner hardware plus Wyrd software — not immediate manufacture of every vehicle. Release gate reports 190 passing tests; no hardware, SITL, field or regulator validation yet.</p></div>
+            <div><div class="pq">HIVE Frontier</div><p class="pa">The proposed lawful border-awareness product: corridor monitoring, remote-post connectivity, terrain mapping, rescue support, anomaly alerts and proof of observation — with jurisdictional authority, retention limits, anti-discrimination testing, confidence thresholds, human decision and audit paths.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Leviathan</div><div class="prole">Maritime and subsea operations — reusable, autonomous and provable.</div><span class="st program">Integration program</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">First product direction</div><p class="pa"><b>Leviathan Watch</b> — persistent monitoring and mission control. <b>Leviathan Scouts</b> — partner-built underwater vehicles. <b>Leviathan Signal</b> — acoustic, optical, buoy, vessel and delayed-sync communication.</p></div>
+            <div><div class="pq">Initial use cases</div><div class="chips"><span>Submarine-cable inspection</span><span>Offshore assets</span><span>Ports</span><span>Pipelines</span><span>Search &amp; recovery</span><span>Environmental monitoring</span></div></div>
+            <div><div class="pq">Still to prove</div><p class="pa dim">Manufacturer adapters, realistic simulation, hardware-in-the-loop work, production cryptography and sea trials.</p></div>
+            <div><div class="pq">Naming warning</div><p class="pa dim">Leviathan is not Phaeton and not Anchorline.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">CTOS</div><div class="prole">City and institutional operating layer.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it can model</div><p class="pa">Transport, roads, utilities, emergency response, infrastructure, drones, autonomous mobility, public-service workflows and city digital twins.</p></div>
+            <div><div class="pq">Market entry</div><p class="pa dim">Planning, observation, simulation, proof, read-only or advisory pilots, and narrow authorized actuation only. CTOS is not omniscient city control.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">PALLADIUM &amp; Wyrd Dome</div><div class="prole">Accountable counter-autonomy: machine identity, authority, deconfliction and proof.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The differentiator</div><p class="pa">A Proof-of-Flight Mandate — identify the machine, verify authority, check time and boundary, deconflict, then allow, quarantine or escalate, and record proof.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Public description stays at detection, identity, authorization, deconfliction, protected airspace, human decision and evidence. No countermeasure detail. This is not a claim that Wyrd has deployed an autonomous weapon.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">WRAITH</div><div class="prole">Cybersecurity defense operations.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Focus</div><p class="pa">Authorized monitoring, anomaly detection, hardening, incident response, infrastructure preparation, proof, isolated resilience and defensive exercises.</p></div>
+            <div><div class="pq">On offensive work</div><p class="pa dim">LANCE — licensed, authorized offensive-cyber operations — is restricted material. The public statement is limited to: authorized cyber assessment and high-assurance security operations, subject to law, licensing and client mandate.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">ORION / OSAS &amp; Wyrd ARK</div><div class="prole">Relief pods, and continuity intelligence for isolated facilities.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">ORION roadmap</div><p class="pa">ORION-Micro (compact COTS pod) → ORION-Field (rugged local server, radio, drone, sensor and proof pod) → ORION-Coastal → ORION-Strato and ORION-Space as future partnerships. <b>The first product is the pod, not a spaceship.</b></p></div>
+            <div><div class="pq">Wyrd ARK</div><p class="pa">Helps existing facilities keep operating offline: power and resource forecasting, air and water monitoring, inventory, maintenance, repair guidance, access control, emergency procedures, drills and signed records.</p></div>
+            <div class="pspan"><div class="pq">Hard limit</div><p class="pa dim">Life-support control stays with certified deterministic controllers, interlocks and manual override. A language model does not control life support.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Azrael</div><div class="prole">The restricted military-operations family. Separate from Samael by doctrine.</div><span class="st restricted">Restricted</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What may be described</div><p class="pa">Lawful defense support, situational awareness, air-gapped coordination, logistics, resilient communications, operator protection, human-controlled mission support and after-action proof.</p></div>
+            <div><div class="pq">What is never described</div><p class="pa dim">Operational, targeting, weapons and offensive-autonomy detail. Restricted channels only, with a lawful customer, licensing and export review.</p></div>
+            <div class="pspan"><div class="pq">More</div><p class="pa"><a href="restricted.html#corpus" style="color:var(--signal)">Restricted &amp; partner register →</a></p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">LANCE</div><div class="prole">Licensed, authorized offensive-cyber operations — governed separately from WRAITH.</div><span class="st restricted">Restricted</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The only sentence we publish</div><p class="pa">"Authorized cyber assessment and high-assurance security operations, subject to law, licensing and client mandate."</p></div>
+            <div><div class="pq">Never published</div><p class="pa dim">Intrusion methods, payload design, persistence methods, sabotage procedures, unauthorized surveillance capability.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Phaeton &amp; NOMAD</div><div class="prole">Multimodular robotics, and a persistent aerial-node design study.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Phaeton</div><p class="pa">Bodies reconfigurable with wheels, tracks, legs, arms, tools, sensors, cargo, aerial and surface modules. Wyrd contributes the local brain, mission policy, module identity, tool permissions, coordination, proof and lifecycle.</p></div>
+            <div><div class="pq">NOMAD</div><p class="pa dim">A local 3D design study of a long-endurance node carrying relay, sensing, compute and mapping. Aerodynamics, certification, energy, payload and field performance are unvalidated.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHARED PRODUCT FAMILIES -->
+  <section class="sec" id="families" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Shared product families</div>
+        <h2>Products that sit across more than one division.</h2>
+        <p>ARGOS is a shared platform that also supports sellable intelligence products. TrueSight, Praxis and the property and industrial systems are sold through whichever division owns the customer.</p>
+      </div>
+      <div class="plist">
+
+        <details class="prow2">
+          <summary><div class="pname">ARGOS Core</div><div class="prole">Ontology, entity graph, evidence, analytics, forecasting, simulation, dashboards, action packets.</div><span class="st alpha">Integrated alpha</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The loop</div><p class="pa">Observe → admit evidence → fuse → contextualize → model → recommend → human gate → sign.</p></div>
+            <div><div class="pq">Evidence</div><p class="pa">Last recorded full intelligence-spine suite: 231 passing tests. The working tree needs consolidation and a fresh run.</p></div>
+            <div class="pspan"><div class="pq">Operating picture — illustrative</div><div class="fig" style="margin-top:9px;padding:14px"><div class="opgrid"><div class="optile"><div class="ok2">Entities</div><div class="ov">12,408 linked<br><span class="sg">+214 today</span></div></div><div class="optile"><div class="ok2">Timeline</div><div class="ov">supply corridor<br>14-day window</div></div><div class="optile"><div class="ok2">Risk</div><div class="ov">3 anomalies<br><span class="sg">1 escalated</span></div></div><div class="optile"><div class="ok2">Recommendation</div><div class="ov">→ human gate<br>awaiting sign</div></div></div></div></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Worldcast</div><div class="prole">Geopolitical, macro and event intelligence.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it connects</div><p class="pa">Public events, markets, institutions, infrastructure, policy, trade, conflict, climate and supply chains.</p></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">It expresses uncertainty and source provenance. It does not pretend to predict the future, and Wyrd does not claim to predict geopolitics.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Parallax</div><div class="prole">Multi-perspective analytical lens.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail"><div class="pspan"><div class="pq">What it does</div><p class="pa">Compares competing interpretations, reveals disagreement, identifies assumptions, and shows how conclusions change with new evidence or a different viewpoint.</p></div></div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Sentinel</div><div class="prole">Live strategic analysis — SWOT, PESTLE, risk, competitors, sectors, states.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it must separate</div><p class="pa">Observed fact, inferred pattern, forecast, uncertainty and recommended review — never blended into one confident voice.</p></div>
+            <div><div class="pq">Related</div><p class="pa dim">Sentinel Agentic Office is the governed research-office workflow built on it.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Athena</div><div class="prole">Financial intelligence — research, portfolio context, company and risk analysis.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Recorded forms</div><div class="chips"><span>Athena Financial AI</span><span>Athena Terminal</span><span>Trading Desk</span><span>Investment Adjudicator</span><span>Audit-Grade</span><span>FinBERT integrations</span><span>Prediction-market scanner</span><span>Kraken</span><span>Vulcan</span></div></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Decision support. Not autonomous fiduciary authority, not statutory audit, and no replacement for licensed investment, audit or legal professionals.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Verdandi · Pythia · Yggdrasil</div><div class="prole">Forecasting, scenario intelligence and cross-domain knowledge structure.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail"><div class="pspan"><div class="pq">How they must be represented</div><p class="pa">Probabilistic and evidence-backed, never prophetic. They remain R&amp;D or specialist modules unless a current product surface is separately proved.</p></div></div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Archimedes</div><div class="prole">Engineering, optimization and analytical problem-solving family.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail"><div class="pspan"><div class="pq">Where it is applied</div><p class="pa">Quantitative and engineering work alongside NINA, with the same assurance requirement: verified feasibility before any performance claim.</p></div></div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Marker</div><div class="prole">Proof-backed reporting and publishing.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Use cases</div><div class="chips"><span>News verification</span><span>Public intelligence</span><span>Cited reports</span><span>Source maps</span><span>Proof labels</span><span>Corrections</span><span>Provenance</span></div></div>
+            <div><div class="pq">Family</div><p class="pa dim">Sits with the other cognitive surfaces: Briefing Room, Uriel, executive dashboards, approval surfaces and the quarterly State of AI reports.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Space &amp; Earth intelligence</div><div class="prole">The intelligence layer above public or partner space data.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Product directions</div><div class="chips"><span>Wyrd Orbital Mesh</span><span>Satellite Proof Packs</span><span>ARGOS Earth Watch</span><span>Aceso Crisis Corridor</span><span>Air Readiness From Space</span><span>Infrastructure Drift Monitor</span><span>Orbital Supply Chain Proof</span><span>Space Weather Sentinel</span><span>Space Proof Engine</span></div></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">Wyrd does not own satellites. The opportunity is the governed evidence layer above existing data.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Oil, gas, ports &amp; logistics</div><div class="prole">ARGOS plus NINA against routing, scheduling and asset planning.</div><span class="st research">Research prototype</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it supports</div><p class="pa">Offshore-supply routing, vessel scheduling, field and asset ontologies, maintenance planning, weather and constraint modelling, cargo priority, route risk, emissions accounting, and proof of assumptions and results.</p></div>
+            <div><div class="pq">Honesty note</div><p class="pa dim">The offshore-supply example used in July is illustrative. It demonstrates the problem and method — not a validated customer saving.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">TrueSight</div><div class="prole">Object authentication and physical proof.</div><span class="st pilot">Pilot candidate</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">The cross-stack flow</div><p class="pa">T-AOS captures and verifies the object · ARGOS analyzes visual, material and anomaly context · ICARUS records identity, custody, policy and proof · the owner vault stores the object record · RASOS deploys trusted verifier packages · Mandate Network joins only when ownership, title, payment or value moves.</p></div>
+            <div><div class="pq">Stochastic Proof Engine</div><p class="pa">The physical fingerprint engine: material microstructure, manufacturing irregularity, visual crypto, split proof, archive enrollment, factory birthprints and re-verification.</p></div>
+            <div><div class="pq">Product forms</div><div class="chips"><span>Factory enrollment</span><span>Archive enrollment</span><span>Object birthprint</span><span>Owner credential</span><span>Glasses verifier</span><span>Review Room</span><span>Digital Product Passport</span><span>Title / custody proof</span></div></div>
+            <div><div class="pq">Where the boundary sits</div><p class="pa dim">No promise of perfect authentication without domain testing, controlled capture and adversarial validation. Applied domains include luxury, art, wine, aerospace parts, pharmaceuticals and legal documents.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Praxis</div><div class="prole">Career-skills and applied-learning platform.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it includes</div><p class="pa">Discipline-specific curricula, cognitive apprenticeship, role-native exercises, exams, governance, proof and career tracks.</p></div>
+            <div><div class="pq">ECFL</div><p class="pa">The levelling, rigor, assessment and equivalence chassis: competence spines, course blueprints, difficulty progression, track-specific curricula, exam parity, signed credentials and governed grading.</p></div>
+            <div><div class="pq">Family</div><div class="chips"><span>Praxis CCE</span><span>Praxis OCL</span><span>Athena Chief of Staff</span><span>Hora</span><span>Agent cards</span><span>Simulated teams</span><span>Little Supernova</span></div></div>
+            <div><div class="pq">Naming note</div><p class="pa dim">Use current product names. Legacy repo names — Aether, Quantico, Aegis Empire — are lineage, not separate products.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Heimdall</div><div class="prole">Property and infrastructure protection.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What it covers</div><p class="pa">Access control, protected-site awareness, cameras, alarms, visitor and contractor workflows, and incident evidence.</p></div>
+            <div><div class="pq">Related</div><p class="pa dim">Anchorline is the access-control and concierge-security brain; Camera Watchman is the governed visual-monitoring surface with local processing, bounded retention, redaction and human review.</p></div>
+          </div>
+        </details>
+
+        <details class="prow2">
+          <summary><div class="pname">Factory Operator &amp; OT</div><div class="prole">Industrial and operational-technology intelligence.</div><span class="st arch">Architecture defined</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Directions</div><div class="chips"><span>Machine state</span><span>Maintenance</span><span>Access</span><span>Safety</span><span>Shift handover</span><span>Anomaly detection</span><span>Digital work instructions</span><span>Offline operations</span><span>Proof of changes</span></div></div>
+            <div><div class="pq">Assurance</div><p class="pa dim">IEC 62443-oriented, with proof of every change.</p></div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ADJUNCTS -->
+  <section class="sec" id="adjuncts" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Group-level adjuncts</div>
+        <h2>Not divisions, but part of the structure.</h2>
+      </div>
+      <div class="ladder l2">
+        <div class="rung"><div class="rn">Commercial</div><h4>Wyrd Ventures</h4><ul><li>Venture and partnership vehicle for Wyrd-derived companies and verticals</li><li>Engine licensing and royalty models</li></ul></div>
+        <div class="rung"><div class="rn">Public interest</div><h4>Wyrd Foundation</h4><ul><li>Education, access and social-impact activity</li><li>Clean legal and financial firewall — never a venture funnel</li></ul></div>
+        <div class="rung r1"><div class="rn">Commercial method</div><h4>Design Partner Office</h4><ul><li>Converts qualified institutions into controlled co-development</li><li>Diagnostics, acceptance criteria, evidence, pilots</li></ul></div>
+        <div class="rung"><div class="rn">Governance</div><h4>High Advisory Council</h4><ul><li>Judgment and Restraint — multidisciplinary, advisory</li><li>Not a product-launch veto body</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>The map is wide. The door is narrow, and deliberately so.</h2>
+      <p>Explore broadly, sell narrowly: one sovereign-agentic platform, one or two focused commercial wedges, and the rest as expansion optionality.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="partners.html">Start a design-partner conversation <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="proof.html">See the evidence first</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-bottom" style="border:none;margin-top:0">
+      <span>© 2026 Wyrd Group · <a href="company.html">Company</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="security.html">Security</a> · <a href="accessibility.html">Accessibility</a></span>
+      <span><a href="index.html">Home</a> · <a href="platform.html">Platform</a> · <a href="corp-us.html">CORP-US</a> · <a href="restricted.html">Restricted</a> · <a href="proof.html">Proof</a> · <a href="research.html">Research</a> · <a href="partners.html">Partners</a> · <a href="about.html">About</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.documentElement.classList.add('js');</script>
+<script src="wyrd-page.js"></script>
+<script src="wyrd-truesight.js"></script>
+</body>
+</html>

@@ -54,10 +54,10 @@
       f.workflow
     ].join('\n');
 
-    var href='mailto:partners@wyrd-group.com?subject='+encodeURIComponent('Design partner — '+f.org+' ('+f.sector+')')+'&body='+encodeURIComponent(lines);
+    var href='mailto:alec.carvalho@wyrd-group.com?subject='+encodeURIComponent('Design partner — '+f.org+' ('+f.sector+')')+'&body='+encodeURIComponent(lines);
     out.setAttribute('data-on','true');
     out.querySelector('.qk').textContent='Ready to send';
-    body.innerHTML='Your mail client is opening with this enquiry addressed to the Design Partner Office. If nothing opens, copy the details to <a href="mailto:partners@wyrd-group.com" style="color:var(--signal)">partners@wyrd-group.com</a>. Expect a reply within five working days; depth of response follows jurisdiction and authority.';
+    body.innerHTML='Your mail client is opening with this enquiry addressed to the Design Partner Office. If nothing opens, copy the details to <a href="mailto:alec.carvalho@wyrd-group.com" style="color:var(--signal)">alec.carvalho@wyrd-group.com</a>. Expect a reply within five working days; depth of response follows jurisdiction and authority.';
     window.location.href=href;
   });
 })();

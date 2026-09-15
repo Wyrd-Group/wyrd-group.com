@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gravitational Research — Wyrd Group</title>
+<meta name="description" content="Wyrd Labs studies black holes, gravastars and nestars — and whether an engineered gravitational structure could one day become a physical memory. Theory under independent review, labelled research." />
+<link rel="canonical" href="https://wyrd-group.com/gravity.html" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 26'%3E%3Cg stroke='%23f2f3f4' stroke-width='2' fill='none'%3E%3Cline x1='11' y1='1' x2='11' y2='25'/%3E%3Cline x1='4' y1='6' x2='18' y2='4'/%3E%3Cline x1='4' y1='13' x2='18' y2='15'/%3E%3Cline x1='4' y1='21' x2='18' y2='19'/%3E%3C/g%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Wyrd Group" />
+<meta property="og:title" content="Gravitational Research — Wyrd Group" />
+<meta property="og:description" content="Wyrd Labs studies black holes, gravastars and nestars — and whether an engineered gravitational structure could one day become a physical memory. Theory under independent review, labelled research." />
+<meta property="og:url" content="https://wyrd-group.com/gravity.html" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#060708" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="wyrd-palantir.css" />
+<link rel="stylesheet" href="wyrd-group.css" />
+<style>
+  /* page-scoped figure styles (gravity.html only) */
+  .gfig { border:1px solid var(--line); border-radius:var(--r-l); background:var(--bg-soft); padding:clamp(16px,2.6vw,28px); margin-top:clamp(30px,4vw,44px); }
+  .gfig .gcap { font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-4); display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+  .gfig .gcap::after { content:""; height:1px; background:var(--line); flex:1; }
+  .gscroll { overflow-x:auto; }
+  .gscroll svg { min-width:620px; }
+  .gfig svg { display:block; width:100%; height:auto; }
+  .gfig svg text { font-family:"Geist Mono", ui-monospace, Menlo, monospace; }
+  .ggrid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .gpanel { border:1px solid var(--line); border-radius:6px; padding:14px 14px 12px; margin:0; }
+  .gpanel figcaption { font-family:var(--font-mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-2); margin-top:8px; display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }
+  .gpanel figcaption span { color:var(--ink-4); font-size:9.5px; }
+  @media (max-width:860px) { .ggrid { grid-template-columns:1fr; } }
+  .g-spin { transform-box:fill-box; transform-origin:center; animation:gspin 120s linear infinite; }
+  .g-spin-rev { transform-box:fill-box; transform-origin:center; animation:gspin 180s linear infinite reverse; }
+  @keyframes gspin { to { transform:rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .g-spin, .g-spin-rev { animation:none; } }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html" aria-label="Wyrd">
+      <svg width="16" height="20" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+        <line x1="11" y1="1" x2="11" y2="25" stroke-width="1.6"></line>
+        <line x1="4" y1="6" x2="18" y2="4" stroke-width="1.6"></line>
+        <line x1="4" y1="13" x2="18" y2="15" stroke-width="1.6"></line>
+        <line x1="4" y1="21" x2="18" y2="19" stroke-width="1.6"></line>
+      </svg>
+      <span class="word">WYRD</span>
+    </a>
+    <div class="nav-links">
+      <a href="platform.html">Platform</a>
+      <a href="divisions.html">Divisions</a>
+      <a href="corp-us.html">CORP-US</a>
+      <a href="proof.html">Proof</a>
+      <a class="on" href="research.html">Research</a>
+      <a href="partners.html">Design Partners</a>
+      <a href="about.html">About</a>
+    </div>
+    <a class="btn btn-primary nav-cta" href="ask.html">Ask Wyrd</a>
+    <button class="nav-burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="0" y1="1" x2="18" y2="1"></line><line x1="0" y1="7" x2="18" y2="7"></line><line x1="0" y1="13" x2="18" y2="13"></line></svg></button>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" data-open="false">
+  <div class="scrim"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="dhead">
+      <span>Wyrd Group</span>
+      <button class="dclose" type="button" aria-label="Close menu"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" stroke="currentColor" stroke-width="1.6"><line x1="1" y1="1" x2="14" y2="14"></line><line x1="14" y1="1" x2="1" y2="14"></line></svg></button>
+    </div>
+      <a class="dlink" href="platform.html">Platform</a>
+      <a class="dlink" href="divisions.html">Divisions</a>
+      <a class="dlink" href="corp-us.html">CORP-US</a>
+      <a class="dlink" href="proof.html">Proof</a>
+      <a class="dlink on" href="research.html">Research</a>
+      <a class="dlink" href="partners.html">Design Partners</a>
+      <a class="dlink" href="about.html">About</a>
+      <a class="btn btn-primary dcta" href="ask.html">Ask Wyrd</a>
+  </div>
+</div>
+
+<div class="classbar">
+  <div class="wrap">
+    <span class="sig">Wyrd Labs</span>
+    <span class="hidexs">Gravitational research · black holes · gravastars · nestars</span>
+    <span class="spacer"></span>
+    <span>Theory under review · labelled research</span>
+  </div>
+</div>
+
+<main id="top">
+
+  <header class="phead">
+    <div class="wrap">
+      <div class="eyebrow"><span class="dot"></span> Gravitational research</div>
+      <h1>Can gravity itself hold information?</h1>
+      <p>Wyrd Labs runs a fundamental-physics program on black holes, gravastars and nestars — and asks whether an engineered gravitational structure could become a new physical basis for data storage. Everything on this page is labelled by what it currently is: theory under independent review. Not experiment. Not product.</p>
+    </div>
+  </header>
+
+  <section class="sec" id="cutaway" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="gfig gscroll">
+        <div class="gcap">Fig. 01 · Nestar cutaway — nested containment · schematic, not to scale</div>
+        <svg viewBox="0 0 980 560" role="img" aria-label="Schematic cross-section of a nestar: two nested shells around a core, with an inbound information path and a questioned recovery path">
+          <defs>
+            <radialGradient id="gCore" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3aa873" stop-opacity=".30"/>
+              <stop offset="55%" stop-color="#3aa873" stop-opacity=".09"/>
+              <stop offset="100%" stop-color="#3aa873" stop-opacity="0"/>
+            </radialGradient>
+            <marker id="gArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="rgba(242,243,244,.7)"/>
+            </marker>
+            <marker id="gArrowG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#3aa873"/>
+            </marker>
+          </defs>
+
+          <!-- parent spacetime boundary -->
+          <circle cx="450" cy="280" r="255" fill="none" stroke="rgba(242,243,244,.20)" stroke-width="1" stroke-dasharray="2 8"/>
+          <g class="g-spin">
+            <g stroke="rgba(242,243,244,.30)" stroke-width="1">
+              <line x1="450" y1="18" x2="450" y2="28"/><line x1="450" y1="532" x2="450" y2="542"/>
+              <line x1="188" y1="280" x2="198" y2="280"/><line x1="702" y1="280" x2="712" y2="280"/>
+              <line x1="265" y1="95" x2="272" y2="102"/><line x1="628" y1="458" x2="635" y2="465"/>
+              <line x1="635" y1="95" x2="628" y2="102"/><line x1="272" y1="458" x2="265" y2="465"/>
+            </g>
+            <circle cx="450" cy="25" r="2.4" fill="none" stroke="rgba(242,243,244,.4)" stroke-width="1"/>
+            <circle cx="705" cy="280" r="2.4" fill="none" stroke="rgba(242,243,244,.4)" stroke-width="1"/>
+            <circle cx="450" cy="535" r="2.4" fill="none" stroke="rgba(242,243,244,.4)" stroke-width="1"/>
+            <circle cx="195" cy="280" r="2.4" fill="none" stroke="rgba(242,243,244,.4)" stroke-width="1"/>
+          </g>
+          <text x="450" y="12" text-anchor="middle" font-size="10.5" letter-spacing="1.6" fill="rgba(242,243,244,.56)">PARENT SPACETIME</text>
+
+          <!-- shell 01 -->
+          <circle cx="450" cy="280" r="199" fill="none" stroke="rgba(242,243,244,.06)" stroke-width="13"/>
+          <circle cx="450" cy="280" r="205" fill="none" stroke="rgba(242,243,244,.55)" stroke-width="1.2"/>
+          <circle cx="450" cy="280" r="193" fill="none" stroke="rgba(242,243,244,.55)" stroke-width="1.2"/>
+
+          <!-- region A bits -->
+          <g fill="#3aa873" opacity=".45">
+            <circle cx="610" cy="280" r="1.8"/><circle cx="290" cy="280" r="1.8"/>
+            <circle cx="450" cy="120" r="1.8"/><circle cx="450" cy="440" r="1.8"/>
+            <circle cx="565" cy="165" r="1.8"/><circle cx="335" cy="395" r="1.8"/>
+            <circle cx="335" cy="165" r="1.8"/><circle cx="565" cy="395" r="1.8"/>
+          </g>
+
+          <!-- shell 02 -->
+          <circle cx="450" cy="280" r="121" fill="none" stroke="rgba(242,243,244,.08)" stroke-width="11"/>
+          <circle cx="450" cy="280" r="126" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+          <circle cx="450" cy="280" r="116" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+
+          <!-- region B bits -->
+          <g fill="#3aa873" opacity=".5">
+            <circle cx="538" cy="280" r="1.8"/><circle cx="362" cy="280" r="1.8"/>
+            <circle cx="450" cy="192" r="1.8"/><circle cx="450" cy="368" r="1.8"/>
+            <circle cx="512" cy="218" r="1.8"/><circle cx="388" cy="342" r="1.8"/>
+          </g>
+
+          <!-- core -->
+          <circle cx="450" cy="280" r="62" fill="url(#gCore)"/>
+          <circle cx="450" cy="280" r="62" fill="none" stroke="rgba(58,168,115,.65)" stroke-width="1"/>
+          <g class="g-spin-rev">
+            <circle cx="450" cy="280" r="40" fill="none" stroke="rgba(58,168,115,.35)" stroke-width="1" stroke-dasharray="3 6"/>
+          </g>
+          <circle cx="450" cy="280" r="3" fill="#3aa873"/>
+          <g fill="#3aa873" opacity=".6">
+            <circle cx="432" cy="264" r="1.6"/><circle cx="466" cy="294" r="1.6"/><circle cx="452" cy="252" r="1.6"/>
+          </g>
+
+          <!-- leaders + labels -->
+          <g stroke="rgba(242,243,244,.25)" stroke-width="1" fill="none">
+            <path d="M 627 178 L 730 178"/>
+            <path d="M 572 247 L 730 247"/>
+            <path d="M 494 324 L 730 324"/>
+          </g>
+          <g fill="rgba(242,243,244,.56)" font-size="10.5" letter-spacing="1.4">
+            <text x="738" y="182">SHELL 01 · OUTER BOUNDARY</text>
+            <text x="738" y="251">SHELL 02 · NESTED BOUNDARY</text>
+            <text x="738" y="328">CORE · DEEPEST CONTAINED REGION</text>
+          </g>
+
+          <!-- write path -->
+          <path d="M 60 430 C 200 430, 300 380, 380 330 C 405 315, 430 300, 444 288" fill="none" stroke="rgba(242,243,244,.55)" stroke-width="1.1" stroke-dasharray="2 6" marker-end="url(#gArrow)"/>
+          <text x="60" y="414" font-size="10.5" letter-spacing="1.4" fill="rgba(242,243,244,.56)">INFORMATION INBOUND</text>
+
+          <!-- read path -->
+          <path d="M 430 252 C 350 200, 250 160, 118 150" fill="none" stroke="rgba(58,168,115,.75)" stroke-width="1.1" stroke-dasharray="2 6" marker-end="url(#gArrowG)"/>
+          <text x="60" y="134" font-size="10.5" letter-spacing="1.4" fill="rgba(58,168,115,.85)">RECOVERABLE FROM OUTSIDE?</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="question" style="padding-top:clamp(32px,4vw,48px);border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> The question</div>
+        <h2>Gravity and information are already linked.</h2>
+        <p>Black-hole physics ties gravity to the maximum amount of information a region of space can contain. That link is established science. Where it leads is the open part.</p>
+      </div>
+      <div class="note">
+        <div class="k">The established part</div>
+        <p>A black hole's entropy is set by the area of its horizon, not by its volume — the Bekenstein–Hawking result — and that holographic bound is one of the deepest clues in modern physics. What happens to information when a black hole evaporates remains an open problem that working physicists still argue about.</p>
+      </div>
+      <div class="note" style="margin-top:16px">
+        <div class="k">The questions Wyrd asks</div>
+        <p><b>The fundamental one:</b> can a universe be a physically contained, information-bearing system inside a larger spacetime — formed, stable, and in principle readable from outside? <b>The applied one:</b> if gravity bounds information that tightly, could an engineered gravitational structure store data — and give it back?</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="objects" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> The objects</div>
+        <h2>Three structures at the center of the program.</h2>
+      </div>
+
+      <div class="gfig">
+        <div class="gcap">Fig. 02 · Three compact objects, three fates for information</div>
+        <div class="ggrid">
+
+          <figure class="gpanel">
+            <svg viewBox="0 0 360 380" role="img" aria-label="Black hole schematic: arrows crossing the horizon inward only, singularity at the center">
+              <defs>
+                <marker id="gArrow2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                  <path d="M0,0 L10,5 L0,10 z" fill="rgba(242,243,244,.7)"/>
+                </marker>
+              </defs>
+              <circle cx="180" cy="185" r="118" fill="none" stroke="rgba(242,243,244,.20)" stroke-width="1" stroke-dasharray="2 7"/>
+              <text x="180" y="52" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.4)">PHOTON SPHERE</text>
+              <circle cx="180" cy="185" r="80" fill="rgba(0,0,0,.55)" stroke="rgba(242,243,244,.6)" stroke-width="1.2"/>
+              <text x="180" y="120" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.4)">EVENT HORIZON</text>
+              <g stroke="rgba(242,243,244,.5)" stroke-width="1.1" fill="none">
+                <line x1="321" y1="236" x2="263" y2="215" marker-end="url(#gArrow2)"/>
+                <line x1="129" y1="326" x2="150" y2="268" marker-end="url(#gArrow2)"/>
+                <line x1="39" y1="134" x2="97" y2="155" marker-end="url(#gArrow2)"/>
+                <line x1="231" y1="44" x2="210" y2="102" marker-end="url(#gArrow2)"/>
+              </g>
+              <circle cx="180" cy="185" r="2.2" fill="rgba(242,243,244,.85)"/>
+              <text x="180" y="300" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.56)">SINGULARITY · NOTHING COMES BACK OUT</text>
+            </svg>
+            <figcaption>Black hole <span>Established physics</span></figcaption>
+          </figure>
+
+          <figure class="gpanel">
+            <svg viewBox="0 0 360 380" role="img" aria-label="Gravastar schematic: a thin shell instead of a horizon, light deflected around it, de Sitter core inside">
+              <circle cx="180" cy="185" r="80" fill="none" stroke="rgba(242,243,244,.06)" stroke-width="13"/>
+              <circle cx="180" cy="185" r="86" fill="none" stroke="rgba(242,243,244,.55)" stroke-width="1.1"/>
+              <circle cx="180" cy="185" r="74" fill="none" stroke="rgba(242,243,244,.55)" stroke-width="1.1"/>
+              <text x="180" y="86" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.4)">THIN SHELL · NO HORIZON</text>
+              <circle cx="180" cy="185" r="46" fill="none" stroke="rgba(58,168,115,.45)" stroke-width="1" stroke-dasharray="3 6"/>
+              <text x="180" y="189" text-anchor="middle" font-size="9.5" letter-spacing="1.2" fill="rgba(58,168,115,.85)">DE SITTER CORE</text>
+              <path d="M 24 326 C 92 306, 132 272, 152 222 C 166 186, 204 150, 268 118" fill="none" stroke="rgba(242,243,244,.45)" stroke-width="1.1" stroke-dasharray="3 5" marker-end="url(#gArrow2)"/>
+              <text x="180" y="330" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.56)">NO SINGULARITY · LIGHT BENDS AROUND</text>
+            </svg>
+            <figcaption>Gravastar <span>Theoretical model</span></figcaption>
+          </figure>
+
+          <figure class="gpanel">
+            <svg viewBox="0 0 360 380" role="img" aria-label="Nestar schematic: three nested shells with labelled contained regions A, B and C">
+              <circle cx="180" cy="185" r="96" fill="none" stroke="rgba(242,243,244,.05)" stroke-width="9"/>
+              <circle cx="180" cy="185" r="100" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+              <circle cx="180" cy="185" r="92" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+              <circle cx="180" cy="185" r="61" fill="none" stroke="rgba(242,243,244,.07)" stroke-width="7"/>
+              <circle cx="180" cy="185" r="64" fill="none" stroke="rgba(242,243,244,.45)" stroke-width="1"/>
+              <circle cx="180" cy="185" r="58" fill="none" stroke="rgba(242,243,244,.45)" stroke-width="1"/>
+              <circle cx="180" cy="185" r="28" fill="none" stroke="rgba(58,168,115,.18)" stroke-width="6"/>
+              <circle cx="180" cy="185" r="30" fill="none" stroke="rgba(58,168,115,.5)" stroke-width="1"/>
+              <circle cx="180" cy="185" r="10" fill="rgba(58,168,115,.15)"/>
+              <circle cx="180" cy="185" r="2.5" fill="#3aa873"/>
+              <g fill="#3aa873" opacity=".5">
+                <circle cx="140" cy="150" r="1.6"/><circle cx="224" cy="162" r="1.6"/><circle cx="182" cy="238" r="1.6"/>
+              </g>
+              <text x="180" y="112" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.56)">A</text>
+              <text x="180" y="150" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.56)">B</text>
+              <text x="193" y="189" text-anchor="start" font-size="9.5" letter-spacing="1.3" fill="rgba(58,168,115,.9)">C</text>
+              <text x="180" y="330" text-anchor="middle" font-size="9.5" letter-spacing="1.3" fill="rgba(242,243,244,.56)">SHELLS WITHIN SHELLS · REGIONS WITHIN REGIONS</text>
+            </svg>
+            <figcaption>Nestar <span>Theoretical · speculative</span></figcaption>
+          </figure>
+
+        </div>
+      </div>
+
+      <div class="plist" style="margin-top:clamp(26px,3.4vw,38px)">
+        <details class="prow2">
+          <summary><div class="pname">Black holes</div><div class="prole">The densest information containers known.</div><span class="st working">Established physics</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">Why they anchor the program</div><p class="pa">A black hole saturates the information bound: its entropy grows with the area of its horizon. Black-hole physics is therefore where gravity and information theory already meet — and analogue-gravity experiments reporting Hawking-like emission now let parts of this physics be probed in the laboratory.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Gravastars</div><div class="prole">Gravitational vacuum stars — a proposed alternative to black holes.</div><span class="st arch">Theoretical model</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What they are</div><p class="pa">An extremely compact object with a vacuum interior under negative pressure and a thin ordinary-matter shell — no event horizon, no central singularity. Studied in the peer-reviewed literature for over two decades. Never observed; a consistent theoretical model, not an established object.</p></div>
+          </div>
+        </details>
+        <details class="prow2">
+          <summary><div class="pname">Nestars</div><div class="prole">Nested gravastars — shells within shells.</div><span class="st research">Theoretical model</span></summary>
+          <div class="pdetail">
+            <div><div class="pq">What they are</div><p class="pa">A gravastar whose interior carries further nested structure: multiple shells, each with its own boundary and its own contained region. A younger and more speculative model than the gravastar itself — and the structure the Wyrd commercial division is named after.</p></div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="memory" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> The applied program</div>
+        <h2>Could a gravastar become a memory device?</h2>
+        <p>The commercial research question: could a miniature gravastar or nestar become a physical memory — data encoded into its states and reliably retrieved? A claim like that survives only by clearing six bars, in order. The program is organized around them.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="sn">01</div><div class="sd"><b>Formation.</b> A physically realizable route to form and contain such a structure at all.</div></div>
+        <div class="step"><div class="sn">02</div><div class="sd"><b>Stability.</b> The structure must persist long enough to be written and read.</div></div>
+        <div class="step"><div class="sn">03</div><div class="sd"><b>Writing.</b> A mechanism that encodes data into the structure's states.</div></div>
+        <div class="step"><div class="sn">04</div><div class="sd"><b>Reading.</b> Reliable recovery of the stored information from outside.</div></div>
+        <div class="step"><div class="sn">05</div><div class="sd"><b>Advantage.</b> A clear win in capacity, reliability or cost over existing storage — otherwise there is no point.</div></div>
+        <div class="step"><div class="sn">06</div><div class="sd"><b>Reality.</b> Energy, scale, materials and manufacturing that engineering could actually meet.</div></div>
+      </div>
+
+      <div class="gfig gscroll">
+        <div class="gcap">Fig. 03 · The memory question — cross the shell both ways</div>
+        <svg viewBox="0 0 980 300" role="img" aria-label="Memory schematic: a write arrow carrying data into a nestar and a read arrow coming back out">
+          <defs>
+            <radialGradient id="gCore3" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3aa873" stop-opacity=".28"/>
+              <stop offset="60%" stop-color="#3aa873" stop-opacity=".08"/>
+              <stop offset="100%" stop-color="#3aa873" stop-opacity="0"/>
+            </radialGradient>
+            <marker id="gArrow3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="rgba(242,243,244,.75)"/>
+            </marker>
+            <marker id="gArrow3G" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0,0 L10,5 L0,10 z" fill="#3aa873"/>
+            </marker>
+          </defs>
+
+          <!-- nestar -->
+          <circle cx="490" cy="150" r="100" fill="none" stroke="rgba(242,243,244,.05)" stroke-width="9"/>
+          <circle cx="490" cy="150" r="104" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="96" fill="none" stroke="rgba(242,243,244,.5)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="59" fill="none" stroke="rgba(242,243,244,.07)" stroke-width="7"/>
+          <circle cx="490" cy="150" r="62" fill="none" stroke="rgba(242,243,244,.42)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="56" fill="none" stroke="rgba(242,243,244,.42)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="28" fill="url(#gCore3)"/>
+          <circle cx="490" cy="150" r="28" fill="none" stroke="rgba(58,168,115,.6)" stroke-width="1"/>
+          <circle cx="490" cy="150" r="2.6" fill="#3aa873"/>
+
+          <!-- stored bits -->
+          <g fill="#3aa873" opacity=".5">
+            <circle cx="570" cy="150" r="1.8"/><circle cx="410" cy="150" r="1.8"/>
+            <circle cx="490" cy="70" r="1.8"/><circle cx="490" cy="230" r="1.8"/>
+            <circle cx="547" cy="93" r="1.8"/><circle cx="433" cy="207" r="1.8"/>
+            <circle cx="547" cy="207" r="1.8"/><circle cx="433" cy="93" r="1.8"/>
+          </g>
+
+          <!-- write arrow -->
+          <path d="M 62 52 C 200 58, 320 88, 404 116" fill="none" stroke="rgba(242,243,244,.6)" stroke-width="1.2" marker-end="url(#gArrow3)"/>
+          <text x="62" y="34" font-size="10.5" letter-spacing="1.4" fill="rgba(242,243,244,.6)">WRITE — ENCODE DATA INTO STATES</text>
+
+          <!-- read arrow -->
+          <path d="M 512 140 C 620 162, 758 200, 906 238" fill="none" stroke="rgba(58,168,115,.8)" stroke-width="1.2" marker-end="url(#gArrow3G)"/>
+          <text x="640" y="282" font-size="10.5" letter-spacing="1.4" fill="rgba(58,168,115,.85)">READ — RECOVER FROM OUTSIDE</text>
+
+          <text x="62" y="282" font-size="10.5" letter-spacing="1.4" fill="rgba(242,243,244,.56)">THE WHOLE CLAIM LIVES IN THESE TWO ARROWS</text>
+        </svg>
+      </div>
+
+      <div class="note" style="margin-top:16px">
+        <div class="k">Where this honestly sits</div>
+        <p>No gravastar has been observed or created. This is mathematics and theoretical physics, not laboratory hardware. Quantum computing is the fair comparison for the ambition: fundamental physics became experimental machines through decades of sustained research. <b>This program is at the theory stage of that road, and says so.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="origin" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> The connection</div>
+        <h2>Wyrd's software began here.</h2>
+        <p>The company's platform started as an attempt to reproduce nested containment digitally — software that holds, governs and recovers information the way these structures are conjectured to hold it. That line of research continues as the <a href="research.html" style="color:var(--signal)">Substrate Hypothesis program</a>; the work on this page is its gravitational origin.</p>
+      </div>
+      <div class="note">
+        <div class="k">The name</div>
+        <p><b>Nestar, the enterprise division, takes its name from the nestar:</b> nested shells, each with its own boundary, authority and contents. The product's architecture — containment, mandates, approval gates, governed recovery — follows the same shape. Physics supplied the question and the metaphor. Engineering supplies the discipline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="status" style="padding-top:0;border-top:none">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="dot"></span> Status</div>
+        <h2>Theory, under review, labelled as such.</h2>
+      </div>
+      <div class="note">
+        <div class="k">What exists today</div>
+        <p>A complete theoretical manuscript connecting black-hole physics, information theory and the storage question — with worked calculations, an explicit audit of which components are proven, conditional or open, and stated falsification criteria. It is undergoing independent technical review before circulation to domain physicists.</p>
+        <ul>
+          <li>No experiment, no device, no prototype — nothing on this page is a claim of working memory hardware.</li>
+          <li>The deepest question — whether our own universe is a contained system — is stated inside the work itself as not currently falsifiable as formulated.</li>
+          <li>Publication is intended after review. This page will carry the reference when there is something public to cite.</li>
+        </ul>
+      </div>
+      <div class="pipe" style="margin-top:clamp(28px,4vw,40px)">
+        <span class="pstage">theory</span><span class="parr">→</span>
+        <span class="pstage">independent review</span><span class="parr">→</span>
+        <span class="pstage">publication</span><span class="parr">→</span>
+        <span class="pstage">experiment proposal</span><span class="parr">→</span>
+        <span class="pstage last">evidence decides</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>We want qualified physicists to attack this work.</h2>
+      <p>If you work on gravastars, compact objects or quantum gravity — or lead a storage research program — we would rather have the manuscript killed early by experts than carried by enthusiasm.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="ask.html">Talk to us <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="research.html">All research programs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-bottom" style="border:none;margin-top:0">
+      <span>© 2026 Wyrd Group · <a href="company.html">Company</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="security.html">Security</a> · <a href="accessibility.html">Accessibility</a></span>
+      <span><a href="index.html">Home</a> · <a href="platform.html">Platform</a> · <a href="divisions.html">Divisions</a> · <a href="corp-us.html">CORP-US</a> · <a href="restricted.html">Restricted</a> · <a href="proof.html">Proof</a> · <a href="partners.html">Partners</a> · <a href="about.html">About</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>document.documentElement.classList.add('js');</script>
+<script src="wyrd-page.js"></script>
+<script src="wyrd-truesight.js"></script>
+</body>
+</html>

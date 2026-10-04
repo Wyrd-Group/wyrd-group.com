@@ -1,0 +1,4 @@
+stage,iterations,p50_ms,p95_ms,p99_ms,measurement_scope
+govern,1000,14.7244,21.8755,33.0027,Sequential isolated govern/seal/verify cycles; not concurrent end-to-end latency
+seal,1000,5.7517,8.5534,18.7486,Sequential isolated govern/seal/verify cycles; not concurrent end-to-end latency
+verify,1000,103.008,128.4902,180.1742,Sequential isolated govern/seal/verify cycles; not concurrent end-to-end latency

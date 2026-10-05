@@ -33,3 +33,29 @@ The current website uses 13 stock clips, 10 stock photographs and 13 matched pos
 Pexels sources use https://www.pexels.com/license/ . Both selected Mixkit items explicitly use https://mixkit.co/license/modal/videoFree/ . Attribution is optional. Do not imply that depicted people, brands or facilities endorse Wyrd or represent installed Wyrd systems. Source imagery is illustrative, not product-performance evidence. The radar is illustrative sensing infrastructure, not a verified military system.
 
 All video sources were trimmed to at most 8 seconds, cropped to 16:9 and encoded as silent 1280 x 720 H.264, 24 fps, yuv420p, with fast-start headers. Photos retain their original subject and photographic appearance after resizing and JPEG compression.
+
+## Added 5 October 2026, 11:07 CEST
+
+Three additional photographs are used for contextual card images. A new 1200 × 630 share image combines Wyrd typography with the computing photograph. The original large ARGOS control-room and maritime visuals remain unchanged. Ordinary cropping, resizing and compression were used. No AI treatment.
+
+| Image | Creator | Original page | Use |
+|---|---|---|---|
+| Drone above offshore wind turbines | ZhiCheng Zhang | https://www.pexels.com/photo/close-up-of-a-drone-flying-above-the-sea-26971297/ | Corpus and physical-system previews |
+| Computing infrastructure detail | panumas nikhomkhai | https://www.pexels.com/photo/computer-server-in-data-center-room-17489156/ | Knowledge/compute previews and branded share image |
+| Wind-energy landscape | Kindel Media | https://www.pexels.com/photo/drone-shot-of-wind-turbines-on-the-countryside-9800084/ | Energy and sustainability previews |
+
+These photographs use the [Pexels licence](https://www.pexels.com/license/). They illustrate operating environments and do not depict installed Wyrd equipment or imply endorsement.
+
+### Military and unmanned-system reference videos
+
+Each selected DVIDS asset is individually marked PUBLIC DOMAIN. The selected excerpts depict military exercises and training, not Wyrd systems or deployments. Clips are trimmed to 6–8 seconds, silent, encoded at 1280 × 720, and supplied with matching posters.
+
+| Clip | Credit | Source and excerpt |
+|---|---|---|
+| military-uav | U.S. Air National Guard video by A1C Colin Simpson, 178th Wing | https://www.dvidshub.net/video/916915/mq-9-taxi-takeoff-and-land-advanced-wrath-b-roll, 0–8 s |
+| military-ugv | U.S. Army video by Spc. Christian Carrillo, 7th Army Training Command | https://www.dvidshub.net/video/846123/us-soldiers-assigned-1-4-infantry-regiment-learn-operate-project-origin-hohenfels-germany, 18–24 s |
+| military-usv | U.S. Army video by Spc. Carlos Marquez, 5th Mobile Public Affairs Detachment | https://www.dvidshub.net/video/962786/joint-force-usv-resupply-operations-during-arcane-thunder-25, 6–14 s |
+
+Reuse follows [DVIDS copyright, trademark and publicity conditions](https://www.dvidshub.net/about/copyright). Distinctive service markings and identifiable people are avoided in the selected vehicle-focused cuts. The full required disclaimer appears beside the military footage on ARGOS and Corpus:
+
+“The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.”

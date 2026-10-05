@@ -59,3 +59,51 @@ Each selected DVIDS asset is individually marked PUBLIC DOMAIN. The selected exc
 Reuse follows [DVIDS copyright, trademark and publicity conditions](https://www.dvidshub.net/about/copyright). Distinctive service markings and identifiable people are avoided in the selected vehicle-focused cuts. The full required disclaimer appears beside the military footage on ARGOS and Corpus:
 
 “The appearance of U.S. Department of War (DoW) visual information does not imply or constitute DoW endorsement.”
+
+## Distinct product and service thumbnails: 05 October 2026, 11:43 CEST
+
+Each linked product or service has its own distinct thumbnail, used consistently when that destination appears on another page. Thirty-nine additional Pexels photographs supply the new card images; twelve existing licensed images are reused for one destination each. The large ARGOS visuals, videos and their posters are unchanged. Ordinary crop, resizing and JPEG compression only. No AI treatment. These are illustrative stock photographs, not installed Wyrd systems or interface screenshots.
+
+| Thumbnail | Photographer | Source |
+|---|---|---|
+| aegis | Hicham Chakir | [Pexels photo 10647633](https://www.pexels.com/photo/metallic-texture-in-shadow-10647633/) |
+| agentix | Mikhail Fesenko | [Pexels photo 9553905](https://www.pexels.com/photo/man-writing-a-code-on-a-computer-and-laptop-9553905/) |
+| alec-education | Zen Chung | [Pexels photo 5538616](https://www.pexels.com/photo/college-student-taking-notes-5538616/) |
+| alec | RDNE Stock project | [Pexels photo 10376030](https://www.pexels.com/photo/close-up-of-hands-using-smart-phone-at-desk-10376030/) |
+| assurance-services | IT services EU | [Pexels photo 7639432](https://www.pexels.com/photo/digital-multimeter-7639432/) |
+| compute-fabric | Brett Sayles | [Pexels photo 2881229](https://www.pexels.com/photo/cables-connected-on-server-2881229/) |
+| cortex | ThisIsEngineering | [Pexels photo 3913021](https://www.pexels.com/photo/engineers-in-meeting-3913021/) |
+| creative | Sasha Kim | [Pexels photo 9414330](https://www.pexels.com/photo/a-person-drawing-on-a-graphics-tablet-9414330/) |
+| crown | RDNE Stock project | [Pexels photo 7821573](https://www.pexels.com/photo/person-holding-a-magnifying-glass-above-a-document-7821573/) |
+| deployment-services | Field Engineer | [Pexels photo 442150](https://www.pexels.com/photo/electronics-engineer-fixing-cables-on-server-442150/) |
+| empire | cottonbro studio | [Pexels photo 6803529](https://www.pexels.com/photo/men-in-an-office-sitting-at-a-meeting-and-looking-at-a-whiteboard-6803529/) |
+| eyes-of-god | AMORIE SAM | [Pexels photo 30692441](https://www.pexels.com/photo/security-officer-in-dark-control-room-with-monitors-30692441/) |
+| foundation | Keira Burton | [Pexels photo 6147210](https://www.pexels.com/photo/multiethnic-group-of-young-people-studying-with-notebook-and-laptop-6147210/) |
+| governed-ai-integration | Gerald Venzl | [Pexels photo 8649999](https://www.pexels.com/photo/texts-written-on-a-whiteboard-8649999/) |
+| governed-ai-labs | Alexander Dummer | [Pexels photo 132700](https://www.pexels.com/photo/person-using-appliance-132700/) |
+| hora | Polina Zimmerman | [Pexels photo 3782233](https://www.pexels.com/photo/notes-on-board-3782233/) |
+| icarus | alysha bee | [Pexels photo 23350492](https://www.pexels.com/photo/a-padlock-on-a-fence-23350492/) |
+| intelligence-services | Lara Jameson | [Pexels photo 8828424](https://www.pexels.com/photo/magnifying-glass-on-a-map-8828424/) |
+| iris | Alena Darmel | [Pexels photo 7710074](https://www.pexels.com/photo/photo-of-a-man-and-a-woman-writing-on-a-whiteboard-with-sticky-notes-7710074/) |
+| mandate | iMin Technology | [Pexels photo 12935039](https://www.pexels.com/photo/a-person-holding-a-smartphone-in-front-of-the-payment-terminal-12935039/) |
+| marker | Leeloo The First | [Pexels photo 5561910](https://www.pexels.com/photo/papers-with-statistics-beside-a-laptop-and-smartphone-5561910/) |
+| office | MART PRODUCTION | [Pexels photo 7709283](https://www.pexels.com/photo/hands-typing-on-laptop-keyboard-7709283/) |
+| omnis | Polina Zimmerman | [Pexels photo 3747514](https://www.pexels.com/photo/books-in-library-3747514/) |
+| praxis | Yan Krukau | [Pexels photo 8199142](https://www.pexels.com/photo/professor-and-students-in-the-lecture-hall-8199142/) |
+| proof-spine | Gabriella Ally | [Pexels photo 13733651](https://www.pexels.com/photo/metal-chain-in-close-up-photography-13733651/) |
+| psv | Ron Lach | [Pexels photo 10473517](https://www.pexels.com/photo/metal-keys-hanging-in-row-10473517/) |
+| rasos | Azamat Esenaliev | [Pexels photo 117729](https://www.pexels.com/photo/black-internal-hdd-on-black-surface-117729/) |
+| reflex | TimSon Foox | [Pexels photo 2182863](https://www.pexels.com/photo/circuit-board-2182863/) |
+| rooms | Vizito Visitor Management System | [Pexels photo 13323677](https://www.pexels.com/photo/an-empty-meeting-room-13323677/) |
+| studio | Amar Preciado | [Pexels photo 11063289](https://www.pexels.com/photo/computer-and-a-laptop-with-editing-software-11063289/) |
+| sum | Moe Magners | [Pexels photo 7495611](https://www.pexels.com/photo/people-looking-at-the-whiteboard-7495611/) |
+| tailored-models | Daniil Komov | [Pexels photo 34804005](https://www.pexels.com/photo/laptop-displaying-coding-and-data-analysis-interface-34804005/) |
+| truesight | Ahmer Qureshi | [Pexels photo 4016837](https://www.pexels.com/photo/black-camera-lens-on-black-surface-4016837/) |
+| work | Leeloo The First | [Pexels photo 8970647](https://www.pexels.com/photo/documents-on-desk-by-laptop-8970647/) |
+| wraith | Antoni Shkraba | [Pexels photo 5475750](https://www.pexels.com/photo/close-up-shot-of-a-person-using-a-laptop-5475750/) |
+| wui-for-work | Antoni Shkraba | [Pexels photo 5466250](https://www.pexels.com/photo/statistics-displayed-on-a-monitor-5466250/) |
+| wyrd-mcp | Brett Sayles | [Pexels photo 1597776](https://www.pexels.com/photo/close-up-of-network-cables-with-server-ports-1597776/) |
+| wyrdmail | Jep Gambardella | [Pexels photo 7689876](https://www.pexels.com/photo/headphones-on-laptop-in-call-center-7689876/) |
+| wyrdwork | Vitaly Gariev | [Pexels photo 36714208](https://www.pexels.com/photo/business-professionals-working-in-modern-office-36714208/) |
+
+All additional photographs use the [Pexels licence](https://www.pexels.com/license/). No endorsement by the depicted people, brands or facilities is implied.

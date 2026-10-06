@@ -1,0 +1,63 @@
+{
+  "product": "ICARUS 2.0",
+  "package_version": "2.0.0rc1",
+  "recorded_at": "2026-10-06T04:55:00+02:00",
+  "source_commit": "d660bb44bd7aa8bee0abae75873f92aeccbf44ee",
+  "evidence_level": "Internal native engineering verification and isolated installed demonstration",
+  "native_campaign": {
+    "required_primary_cases": {
+      "passed": 1183,
+      "total": 1183
+    },
+    "additional_subtests": {
+      "passed": 63,
+      "counted_separately": true
+    },
+    "included_test_files": 82,
+    "required_skipped_or_xfailed_cases": 0,
+    "native_wyrd_ci_gates": {
+      "passed": 4,
+      "total": 4
+    },
+    "mapped_audit_and_recovery_cases": {
+      "passed": 182,
+      "total": 182,
+      "included_in_primary_cases": true
+    },
+    "source_environment_retained_evidence_and_cleanup_checked": true
+  },
+  "installed_demonstration": {
+    "signed_approvals": 3,
+    "inert_local_effects": 1,
+    "independently_verified_signed_ledger_records": 26,
+    "authority": "Synthetic authority and published test keys",
+    "observed_checks": [
+      "Completed identical replay without another effect",
+      "Late receipt-only replay",
+      "Changed-intent refusal",
+      "Original expiry refusal",
+      "Revocation refusal",
+      "Passive bundle expected-key admission and wrong-key refusal"
+    ]
+  },
+  "tested_profile": [
+    "macOS arm64",
+    "Local POSIX signed JSONL storage",
+    "Admitted Ed25519 and offline OIDC/SCIM paths",
+    "Configured current external checkpoint",
+    "Owned inert private-store marker receiver"
+  ],
+  "release_status": {
+    "native_implementation_and_complete_technical_tests": "Passed",
+    "genuine_signed_qualification": "Pending",
+    "approved_release": false,
+    "wui_adoption_and_installed_workflow": "Pending"
+  },
+  "boundaries": [
+    "An external checkpoint file alone does not prove independent custody.",
+    "The owned receiver guarantee does not extend to generic callbacks or arbitrary external effects.",
+    "Linux, fleet operation, hardware custody, physical safety and customer acceptance remain unqualified.",
+    "This candidate is separate from the frozen 2 October governed-execution campaign.",
+    "Test counts do not establish certification, universal safety, competitive performance or a production deployment."
+  ]
+}

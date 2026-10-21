@@ -120,9 +120,14 @@
     retry.hidden = true;
     setStatus(variant === 'map' ? 'Playing the narrated map. The network and dates are intended expansion targets.' : 'Playing the complete film. Use the player controls for English captions and full screen.');
   });
-  player.addEventListener('error', () => {
+  function showPlaybackError() {
     retry.hidden = false;
     setStatus('The video could not load. Retry playback, open the video directly, or read the complete transcript below.');
+  }
+  player.addEventListener('error', showPlaybackError);
+  document.getElementById('film-initial-source')?.addEventListener('error', () => {
+    // A failed source child need not bubble an error to its media element.
+    if (!player.hasAttribute('src')) showPlaybackError();
   });
   player.addEventListener('ended', () => setStatus(variant === 'map' ? 'The map has ended. Choose Widescreen or Portrait to return to your place in the complete film.' : 'The film has ended. Explore a chapter, read the transcript or start a conversation with Wyrd.'));
   retry.addEventListener('click', () => {

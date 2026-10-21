@@ -1,0 +1,27 @@
+{
+  "title": "Wyrd | One intelligence. Many modes.",
+  "revision": "2026-10-21 Berlin/Dubai",
+  "originals": [
+    {
+      "file": "WYRD_PUBLIC_FILM_1080P.mp4",
+      "bytes": 307791445,
+      "sha256": "6e88848f558715648e587c4475392aa72394ff4096567e07f3139fe4fbf7210a",
+      "publication_url": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_PUBLIC_FILM_1080P.mp4"
+    },
+    {
+      "file": "WYRD_PUBLIC_FILM_PORTRAIT_1080P.mp4",
+      "bytes": 287914296,
+      "sha256": "ec0523d4ea9321e217be353271d21dde28b0f9b64feb7e4f93b1f88ff7b49bf6",
+      "publication_url": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_PUBLIC_FILM_PORTRAIT_1080P.mp4"
+    },
+    {
+      "file": "WYRD_2028_NARRATED_MAP_DUBAI.mp4",
+      "bytes": 9460328,
+      "sha256": "379e6f13325f0655180d8598e21e16256a1d2be876e787552d3f5dc4ce2c4953",
+      "publication_url": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_2028_NARRATED_MAP_DUBAI.mp4"
+    }
+  ],
+  "public_source": "Approved public company-film delivery, no partner-specific deck or private production materials",
+  "map_credits": "Natural Earth public-domain country geometry; OpenStreetMap Berlin geometry, ODbL1.0. Full credits in CREDITS.md.",
+  "subtitle_derivation": "WYRD_MAP_EN.vtt clips and rebases full-film captions from 591.5666667 to 647.3 seconds. CHAPTERS.vtt is derived from the supplied CHAPTERS.json."
+}

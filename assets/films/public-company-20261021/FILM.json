@@ -1,0 +1,79 @@
+{
+  "title": "Wyrd | One intelligence. Many modes.",
+  "publishedRevision": "Berlin and Dubai, 21 October 2026",
+  "duration": 669.0666666666667,
+  "mapStart": 591.5666666666667,
+  "mapDuration": 55.733333333333235,
+  "sources": {
+    "wide": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_PUBLIC_FILM_1080P.mp4",
+    "portrait": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_PUBLIC_FILM_PORTRAIT_1080P.mp4",
+    "map": "https://github.com/Wyrd-Group/wyrd-group.com/releases/download/public-company-film-20261021/WYRD_2028_NARRATED_MAP_DUBAI.mp4"
+  },
+  "posters": {
+    "wide": "/assets/films/public-company-20261021/WYRD_PUBLIC_POSTER.jpg",
+    "portrait": "/assets/films/public-company-20261021/WYRD_PUBLIC_PORTRAIT_POSTER.jpg",
+    "map": "/assets/films/public-company-20261021/WYRD_PUBLIC_POSTER.jpg"
+  },
+  "captions": {
+    "film": "/assets/films/public-company-20261021/WYRD_PUBLIC_EN.vtt",
+    "map": "/assets/films/public-company-20261021/WYRD_MAP_EN.vtt"
+  },
+  "chapters": [
+    {
+      "start": 0.0,
+      "title": "One event, many perspectives"
+    },
+    {
+      "start": 41.63333333333333,
+      "title": "Capability across different operating conditions"
+    },
+    {
+      "start": 145.56666666666666,
+      "title": "Wyrd, Labs and one intelligence"
+    },
+    {
+      "start": 224.9,
+      "title": "Memory, embodiment and learning"
+    },
+    {
+      "start": 273.6,
+      "title": "Corpus: intelligence in the physical world"
+    },
+    {
+      "start": 327.76666666666665,
+      "title": "Defence and civilian programmes"
+    },
+    {
+      "start": 362.1333333333333,
+      "title": "Underwater, third-party bodies and connectivity"
+    },
+    {
+      "start": 393.6,
+      "title": "People, authority and customer control"
+    },
+    {
+      "start": 445.8333333333333,
+      "title": "Wyrd Work and WUI for Work"
+    },
+    {
+      "start": 498.8666666666667,
+      "title": "From plain language to authorised work"
+    },
+    {
+      "start": 544.9,
+      "title": "Implementation evidence and qualification"
+    },
+    {
+      "start": 591.5666666666667,
+      "title": "Our intended international network"
+    },
+    {
+      "start": 647.3,
+      "title": "One intelligence. Many modes."
+    }
+  ],
+  "credits": "/assets/films/public-company-20261021/CREDITS.md",
+  "narrator": "David, ElevenLabs",
+  "score": "Original evolving electronic-orchestral V7 score",
+  "visualStatus": "AI-assisted editorial animation. Workflows and physical systems retain their on-screen qualifications. International network is an intended 2028 structure; African expansion continues in 2029 and 2030."
+}

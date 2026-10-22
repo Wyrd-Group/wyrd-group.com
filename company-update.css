@@ -4,3 +4,6 @@
 @media(max-width:900px){.update-film-feature{grid-template-columns:1fr;gap:36px}.update-film-copy{max-width:680px}}
 @media(max-width:650px){.update-team,.update-network-grid,.update-phases{grid-template-columns:1fr;gap:18px}.update-team article,.update-network-grid article,.update-phases article{padding:25px}.update-prose p{font-size:1rem;line-height:1.85}.update-play{width:60px;height:60px}.update-film-duration{right:10px;bottom:10px}.update-map{margin:28px -3%}.update-map figcaption{padding:0 3%}}
 @media(prefers-reduced-motion:reduce){.update-film-poster img{transition:none}.update-film-poster:hover img{transform:none}}
+
+/* Approved founding-team biographies. 22 October 2026. */
+.update-team-bio,.update-team-complementarity{padding-top:40px;margin-top:40px;border-top:1px solid var(--line);scroll-margin-top:100px}.update-team-bio h3,.update-team-complementarity h3{font-size:clamp(1.7rem,3vw,2.5rem);font-weight:400;line-height:1.2;letter-spacing:-.025em;margin:0 0 24px}.update-team-bio .eyebrow{font-size:.76rem;line-height:1.5;letter-spacing:.1em;margin-bottom:16px}.update-team article>.text-link{margin-top:16px}.update-team-bio p a{text-decoration:underline;text-underline-offset:3px}
